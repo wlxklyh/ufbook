@@ -57,18 +57,25 @@ docs/
 
 #### 添加图片
 
-1. 将图片放在 `docs/images/章节名/` 目录下
-2. 在 Markdown 中使用相对路径引用：
+1. 在文章所在目录下创建与文章**同名的文件夹**（不含 `.md` 扩展名）
+2. 将图片放在该同名文件夹中
+3. 在 Markdown 中使用相对路径引用
 
 ```markdown
-![图片描述](../images/rendering/screenshot-01.png)
+![图片描述](文章同名文件夹/图片.png)
 ```
 
 **示例**：
 
 假设你在编辑 `docs/rendering/wuthering-waves-raytracing.md`，要添加图片：
-- 图片位置：`docs/images/rendering/01-raytracing-demo.png`
-- 引用方式：`![光追效果](../images/rendering/01-raytracing-demo.png)`
+- 创建文件夹：`docs/rendering/wuthering-waves-raytracing/`
+- 图片位置：`docs/rendering/wuthering-waves-raytracing/01-raytracing-demo.png`
+- 引用方式：`![光追效果](wuthering-waves-raytracing/01-raytracing-demo.png)`
+
+假设你在编辑 `docs/performance/locke-kingdom-mobile-pipeline.md`：
+- 创建文件夹：`docs/performance/locke-kingdom-mobile-pipeline/`
+- 图片位置：`docs/performance/locke-kingdom-mobile-pipeline/01-pipeline.png`
+- 引用方式：`![管线图](locke-kingdom-mobile-pipeline/01-pipeline.png)`
 
 详细规范请查看 `docs/images/README.md`
 
@@ -152,10 +159,16 @@ pip install -r requirements.txt --upgrade
 ```
 ufbook/
 ├── docs/                        # 📝 内容目录（MkDocs）
-│   ├── images/                  # 🖼️ 图片资源（按章节分类）
 │   ├── rendering/               # 各章节 markdown
+│   │   ├── wuthering-waves-raytracing/      # 文章专属图片文件夹
+│   │   ├── wuthering-waves-raytracing.md
+│   │   └── ...
 │   ├── performance/
+│   │   ├── locke-kingdom-mobile-pipeline/   # 文章专属图片文件夹
+│   │   ├── locke-kingdom-mobile-pipeline.md
+│   │   └── ...
 │   ├── ... (其他章节)
+│   ├── images/                  # 🖼️ 可选：共享图片（如logo等）
 │   └── index.md                 # 首页
 ├── scripts/                     # 🔧 脚本工具
 │   ├── install.bat
