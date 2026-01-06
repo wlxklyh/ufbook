@@ -38,10 +38,6 @@
 * [虚幻引擎布料模拟现状 PanelCloth新功能和使用技巧 | 肖月](animation-physics/panel-cloth.md)
 * [高效布料动画解算流程解析 | Sherry Yao](animation-physics/cloth-animation-workflow.md)
 
-## 🌐 网络 Network
-
-* [网络相关内容待更新](network/README.md)
-
 ## 🛠️ 开发工具 Tools
 
 * [超越PrintString：虚幻引擎调试工具 | Matt Oztalay](tools/debugging-tools.md)
@@ -68,6 +64,7 @@
 * [主旨演讲](ecosystem/keynote.md)
 * [目标迭代：从快照和流式处理迈向增量式处理 | Zousar Shaker & Josie Yang](ecosystem/incremental-processing.md)
 * [Epic游戏商店：2025年度商店与产品更新 | Kyle Billings](ecosystem/epic-games-store-2025.md)
+* [虚幻引擎邂逅元宇宙：借助云端游戏畅享3D体验 | Rafael Barbosa](ecosystem/metaverse-cloud-gaming.md)
 
 ---
 

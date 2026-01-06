@@ -1,6 +1,3 @@
-# book.json 配置文件（可选）
-# 如果使用GitBook CLI，可以使用此配置
-
 {
   "title": "UF2025 虚幻引擎嘉年华演讲总结",
   "description": "Unreal Fest ShangHai 2025 演讲文字总结系列",
@@ -30,4 +27,5 @@
     }
   }
 }
+
 
