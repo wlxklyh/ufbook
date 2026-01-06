@@ -1,0 +1,210 @@
+site_name: UF2025 虚幻引擎嘉年华演讲总结
+site_description: Unreal Fest Shanghai 2025 所有演讲内容的文字总结版本
+site_author: UF Book Team
+site_url: https://yourusername.github.io/ufbook/
+
+# 代码仓库
+repo_name: ufbook
+repo_url: https://github.com/yourusername/ufbook
+edit_uri: edit/main/docs/
+
+# 版权信息
+copyright: Copyright &copy; 2025 UF Book Team
+
+# 主题配置
+theme:
+  name: material
+  language: zh
+  
+  # 配色方案
+  palette:
+    # 浅色模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    
+    # 深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  
+  # 字体设置
+  font:
+    text: Noto Sans SC
+    code: Roboto Mono
+  
+  # 功能特性
+  features:
+    - navigation.instant        # 即时加载
+    - navigation.tracking       # 锚点跟踪
+    - navigation.tabs           # 顶部标签页
+    - navigation.tabs.sticky    # 固定标签页
+    - navigation.sections       # 导航章节
+    - navigation.expand         # 默认展开导航
+    - navigation.path           # 面包屑导航
+    - navigation.indexes        # 章节索引页
+    - navigation.top            # 返回顶部按钮
+    - toc.follow                # 目录跟随
+    - search.suggest            # 搜索建议
+    - search.highlight          # 搜索高亮
+    - search.share              # 搜索分享
+    - content.code.copy         # 代码复制按钮
+    - content.action.edit       # 编辑按钮
+    - content.action.view       # 查看源码按钮
+  
+  # 图标
+  icon:
+    logo: material/book-open-page-variant
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+    
+  # 自定义404页面
+  favicon: assets/favicon.png
+
+# Markdown 扩展
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# 插件
+plugins:
+  - search:
+      lang: 
+        - zh
+        - en
+      separator: '[\s\-\.]+'
+  - minify:
+      minify_html: true
+
+# 额外配置
+extra:
+  # 社交链接
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yourusername/ufbook
+    - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/
+  
+  # 版本切换（可选）
+  # version:
+  #   provider: mike
+
+# 额外的CSS和JS（可选）
+# extra_css:
+#   - stylesheets/extra.css
+
+# extra_javascript:
+#   - javascripts/extra.js
+
+# 导航结构
+nav:
+  - 首页: index.md
+  
+  - 引擎功能:
+    - engine-features/ue5.7-preview.md
+    - engine-features/ue5.6-features.md
+    - engine-features/smoke-simulation.md
+    - engine-features/smart-digital-cockpit.md
+  
+  - 性能优化:
+    - performance/frame-hitches-hunting.md
+    - performance/cross-platform-optimization.md
+    - performance/snapdragon-profiler.md
+    - performance/locke-kingdom-mobile-pipeline.md
+  
+  - 渲染技术:
+    - rendering/wuthering-waves-raytracing.md
+    - rendering/delta-force-gi.md
+    - rendering/pixel-optimization.md
+    - rendering/ml-graphics-framework.md
+    - rendering/destiny-trigger-lighting.md
+  
+  - 移动开发:
+    - mobile/ue5.6-mobile-updates.md
+    - mobile/qualcomm-frame-interpolation.md
+  
+  - 程序化生成:
+    - pcg/dungeon-generation.md
+  
+  - 动画与物理:
+    - animation-physics/panel-cloth.md
+    - animation-physics/cloth-animation-workflow.md
+  
+  - 网络:
+    - network/README.md
+  
+  - 开发工具:
+    - tools/debugging-tools.md
+    - tools/project-prototyping.md
+    - tools/world-building-tips.md
+    - tools/rider-teamcity.md
+  
+  - 项目实战:
+    - project-cases/marvel-rivals-gas.md
+    - project-cases/cf-rainbow.md
+    - project-cases/one-piece-rd.md
+    - project-cases/5-years-game-breakthrough.md
+    - project-cases/isekai-art-production.md
+  
+  - 行业应用:
+    - industry/digital-twin-ai.md
+    - industry/51world-spatial-intelligence.md
+    - industry/aec-project-review.md
+  
+  - 引擎生态:
+    - ecosystem/keynote.md
+    - ecosystem/incremental-processing.md
+    - ecosystem/epic-games-store-2025.md
+    - ecosystem/metaverse-cloud-gaming.md
+  
+  - 附录:
+    - appendix/faq.md
+    - appendix/resources.md
+    - appendix/join-community.md
+

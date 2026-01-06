@@ -1,80 +1,79 @@
 @echo off
 chcp 65001 >nul
-echo ====================================
-echo   部署到 GitHub Pages
-echo ====================================
+echo ========================================
+echo   UF Book - 部署到 GitHub Pages
+echo ========================================
 echo.
 
-echo [提示] 此脚本将会:
+REM 检查是否已安装 MkDocs
+mkdocs --version >nul 2>&1
+if errorlevel 1 (
+    echo [错误] 未检测到 MkDocs！
+    echo.
+    echo 请先运行 scripts\install.bat 安装依赖
+    pause
+    exit /b 1
+)
+
+REM 检查是否在 Git 仓库中
+cd /d "%~dp0\.."
+git status >nul 2>&1
+if errorlevel 1 (
+    echo [错误] 当前目录不是 Git 仓库！
+    echo.
+    echo 请确保项目已初始化为 Git 仓库：
+    echo   git init
+    echo   git remote add origin [你的仓库地址]
+    pause
+    exit /b 1
+)
+
+echo [提示] 此操作将会：
 echo   1. 构建静态网站
-echo   2. 推送到 gh-pages 分支
-echo   3. 自动部署到 GitHub Pages
+echo   2. 部署到 gh-pages 分支
+echo   3. 推送到 GitHub
 echo.
-
-set /p confirm="确认部署? (Y/N): "
-if /i not "%confirm%"=="Y" (
-    echo 已取消
-    pause
-    exit /b 0
-)
-
-echo.
-echo [1/5] 构建静态网站...
-call scripts\build.bat
-if errorlevel 1 (
-    echo [错误] 构建失败
-    pause
-    exit /b 1
-)
-
-echo.
-echo [2/5] 检查 gh-pages 分支...
-git show-ref --verify --quiet refs/heads/gh-pages
-if errorlevel 1 (
-    echo [提示] gh-pages 分支不存在，将创建新分支
-    git checkout --orphan gh-pages
-    git rm -rf .
-    echo "# GitHub Pages" > README.md
-    git add README.md
-    git commit -m "Initialize gh-pages"
-    git push origin gh-pages
-    git checkout main
-)
-
-echo.
-echo [3/5] 切换到 gh-pages 分支...
-git checkout gh-pages
-if errorlevel 1 (
-    echo [错误] 切换分支失败
-    pause
-    exit /b 1
-)
-
-echo.
-echo [4/5] 复制构建文件...
-xcopy /E /Y /I ..\main\_book\* .
-git add .
-git commit -m "Deploy: %date% %time%"
-
-echo.
-echo [5/5] 推送到 GitHub...
-git push origin gh-pages
-if errorlevel 1 (
-    echo [错误] 推送失败
-    git checkout main
-    pause
-    exit /b 1
-)
-
-git checkout main
-
-echo.
-echo ====================================
-echo   部署完成！
-echo ====================================
-echo 访问地址: https://wlxklyh.github.io/ufbook/
-echo.
-echo [提示] GitHub Pages 可能需要几分钟才能更新
+echo 确认部署？
 pause
 
+echo.
+echo [部署] 正在部署到 GitHub Pages...
+echo.
+
+REM 使用 MkDocs 内置部署命令
+mkdocs gh-deploy --clean
+
+if errorlevel 1 (
+    echo.
+    echo [错误] 部署失败！
+    echo.
+    echo 可能的原因：
+    echo 1. 没有配置 Git 远程仓库
+    echo 2. 没有推送权限
+    echo 3. 网络连接问题
+    echo.
+    echo 手动部署步骤：
+    echo 1. mkdocs build
+    echo 2. git checkout gh-pages
+    echo 3. 复制 site/* 到根目录
+    echo 4. git add . ^&^& git commit -m "Update" ^&^& git push
+    pause
+    exit /b 1
+)
+
+echo.
+echo ========================================
+echo   ✓ 部署成功！
+echo ========================================
+echo.
+echo 你的网站将在几分钟内更新
+echo.
+echo 访问地址：
+echo https://yourusername.github.io/ufbook/
+echo.
+echo 提示：
+echo - 首次部署可能需要等待 5-10 分钟
+echo - 在 GitHub 仓库设置中启用 Pages（gh-pages 分支）
+echo.
+pause
 

@@ -1,20 +1,46 @@
-# GitBook
-_book/
-node_modules/
+# MkDocs 构建输出
+site/
+output/
 
-# IDE
-.idea/
-.vscode/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# 旧 GitBook 构建输出
+_book/
+.bookignore
+
+# Node.js (旧的 GitBook 依赖)
+node_modules/
+package-lock.json
+
+# 临时文件
+*.tmp
+*.temp
+*.log
+*.bak
 *.swp
-*.swo
 *~
 
-# OS
+# 操作系统
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Logs
-*.log
-npm-debug.log*
+# IDE
+.vscode/
+.idea/
+*.sublime-*
 
-
+# 环境变量
+.env
+.env.local
