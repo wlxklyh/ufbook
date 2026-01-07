@@ -1,0 +1,262 @@
+{
+  "total": 34,
+  "with_links": 3,
+  "without_links": 31,
+  "tasks": [
+    {
+      "project_name": "ue5.7-preview",
+      "url": "http://www.bilibili.com/video/BV1yV4Cz2EXB",
+      "category": "engine-features"
+    },
+    {
+      "project_name": "frame-hitches-hunting",
+      "url": "http://www.bilibili.com/video/BV1k44mzWEvq",
+      "category": "performance"
+    },
+    {
+      "project_name": "wuthering-waves-raytracing",
+      "url": "http://www.bilibili.com/video/BV1hSW4zTEgQ",
+      "category": "rendering"
+    }
+  ],
+  "all_docs": [
+    {
+      "category": "animation-physics",
+      "file_name": "cloth-animation-workflow",
+      "file_path": "animation-physics\\cloth-animation-workflow.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "animation-physics",
+      "file_name": "panel-cloth",
+      "file_path": "animation-physics\\panel-cloth.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "ecosystem",
+      "file_name": "epic-games-store-2025",
+      "file_path": "ecosystem\\epic-games-store-2025.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "ecosystem",
+      "file_name": "incremental-processing",
+      "file_path": "ecosystem\\incremental-processing.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "ecosystem",
+      "file_name": "keynote",
+      "file_path": "ecosystem\\keynote.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "ecosystem",
+      "file_name": "metaverse-cloud-gaming",
+      "file_path": "ecosystem\\metaverse-cloud-gaming.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "engine-features",
+      "file_name": "smart-digital-cockpit",
+      "file_path": "engine-features\\smart-digital-cockpit.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "engine-features",
+      "file_name": "smoke-simulation",
+      "file_path": "engine-features\\smoke-simulation.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "engine-features",
+      "file_name": "ue5.6-features",
+      "file_path": "engine-features\\ue5.6-features.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "engine-features",
+      "file_name": "ue5.7-preview",
+      "file_path": "engine-features\\ue5.7-preview.md",
+      "bilibili_url": "http://www.bilibili.com/video/BV1yV4Cz2EXB",
+      "has_link": true
+    },
+    {
+      "category": "industry",
+      "file_name": "51world-spatial-intelligence",
+      "file_path": "industry\\51world-spatial-intelligence.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "industry",
+      "file_name": "aec-project-review",
+      "file_path": "industry\\aec-project-review.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "industry",
+      "file_name": "digital-twin-ai",
+      "file_path": "industry\\digital-twin-ai.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "mobile",
+      "file_name": "qualcomm-frame-interpolation",
+      "file_path": "mobile\\qualcomm-frame-interpolation.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "mobile",
+      "file_name": "ue5.6-mobile-updates",
+      "file_path": "mobile\\ue5.6-mobile-updates.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "pcg",
+      "file_name": "dungeon-generation",
+      "file_path": "pcg\\dungeon-generation.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "performance",
+      "file_name": "cross-platform-optimization",
+      "file_path": "performance\\cross-platform-optimization.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "performance",
+      "file_name": "frame-hitches-hunting",
+      "file_path": "performance\\frame-hitches-hunting.md",
+      "bilibili_url": "http://www.bilibili.com/video/BV1k44mzWEvq",
+      "has_link": true
+    },
+    {
+      "category": "performance",
+      "file_name": "locke-kingdom-mobile-pipeline",
+      "file_path": "performance\\locke-kingdom-mobile-pipeline.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "performance",
+      "file_name": "snapdragon-profiler",
+      "file_path": "performance\\snapdragon-profiler.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "project-cases",
+      "file_name": "5-years-game-breakthrough",
+      "file_path": "project-cases\\5-years-game-breakthrough.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "project-cases",
+      "file_name": "cf-rainbow",
+      "file_path": "project-cases\\cf-rainbow.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "project-cases",
+      "file_name": "isekai-art-production",
+      "file_path": "project-cases\\isekai-art-production.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "project-cases",
+      "file_name": "marvel-rivals-gas",
+      "file_path": "project-cases\\marvel-rivals-gas.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "project-cases",
+      "file_name": "one-piece-rd",
+      "file_path": "project-cases\\one-piece-rd.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "rendering",
+      "file_name": "delta-force-gi",
+      "file_path": "rendering\\delta-force-gi.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "rendering",
+      "file_name": "destiny-trigger-lighting",
+      "file_path": "rendering\\destiny-trigger-lighting.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "rendering",
+      "file_name": "ml-graphics-framework",
+      "file_path": "rendering\\ml-graphics-framework.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "rendering",
+      "file_name": "pixel-optimization",
+      "file_path": "rendering\\pixel-optimization.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "rendering",
+      "file_name": "wuthering-waves-raytracing",
+      "file_path": "rendering\\wuthering-waves-raytracing.md",
+      "bilibili_url": "http://www.bilibili.com/video/BV1hSW4zTEgQ",
+      "has_link": true
+    },
+    {
+      "category": "tools",
+      "file_name": "debugging-tools",
+      "file_path": "tools\\debugging-tools.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "tools",
+      "file_name": "project-prototyping",
+      "file_path": "tools\\project-prototyping.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "tools",
+      "file_name": "rider-teamcity",
+      "file_path": "tools\\rider-teamcity.md",
+      "bilibili_url": null,
+      "has_link": false
+    },
+    {
+      "category": "tools",
+      "file_name": "world-building-tips",
+      "file_path": "tools\\world-building-tips.md",
+      "bilibili_url": null,
+      "has_link": false
+    }
+  ]
+}
