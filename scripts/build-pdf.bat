@@ -38,117 +38,89 @@ REM 清空临时文件
 if exist "%TEMP_FILE%" del "%TEMP_FILE%"
 
 REM 合并所有章节文件（按照目录顺序）
-echo # UF2025 虚幻引擎嘉年华演讲总结 >> "%TEMP_FILE%"
-echo. >> "%TEMP_FILE%"
 type docs\index.md >> "%TEMP_FILE%"
 echo. >> "%TEMP_FILE%"
 echo. >> "%TEMP_FILE%"
 
 REM 引擎功能
-echo ## 📌 引擎功能 Engine Features >> "%TEMP_FILE%"
-echo. >> "%TEMP_FILE%"
 for %%f in (docs\engine-features\*.md) do (
-    echo ### %%~nf >> "%TEMP_FILE%"
     type "%%f" >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
 )
 
 REM 性能优化
-echo ## ⚡ 性能优化 Performance >> "%TEMP_FILE%"
-echo. >> "%TEMP_FILE%"
 for %%f in (docs\performance\*.md) do (
-    echo ### %%~nf >> "%TEMP_FILE%"
     type "%%f" >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
 )
 
 REM 渲染技术
-echo ## 🎮 渲染技术 Rendering >> "%TEMP_FILE%"
-echo. >> "%TEMP_FILE%"
 for %%f in (docs\rendering\*.md) do (
-    echo ### %%~nf >> "%TEMP_FILE%"
     type "%%f" >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
 )
 
 REM 移动开发
-echo ## 📱 移动开发 Mobile >> "%TEMP_FILE%"
-echo. >> "%TEMP_FILE%"
 for %%f in (docs\mobile\*.md) do (
-    echo ### %%~nf >> "%TEMP_FILE%"
     type "%%f" >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
 )
 
 REM 程序化生成
-echo ## 🎨 程序化生成 PCG >> "%TEMP_FILE%"
-echo. >> "%TEMP_FILE%"
 for %%f in (docs\pcg\*.md) do (
-    echo ### %%~nf >> "%TEMP_FILE%"
     type "%%f" >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
 )
 
 REM 动画与物理
-echo ## 🏃 动画与物理 Animation ^& Physics >> "%TEMP_FILE%"
-echo. >> "%TEMP_FILE%"
 for %%f in (docs\animation-physics\*.md) do (
-    echo ### %%~nf >> "%TEMP_FILE%"
     type "%%f" >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
 )
 
 REM 开发工具
-echo ## 🛠️ 开发工具 Tools >> "%TEMP_FILE%"
-echo. >> "%TEMP_FILE%"
 for %%f in (docs\tools\*.md) do (
-    echo ### %%~nf >> "%TEMP_FILE%"
     type "%%f" >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
 )
 
 REM 项目实战
-echo ## 🎯 项目实战 Project Cases >> "%TEMP_FILE%"
-echo. >> "%TEMP_FILE%"
 for %%f in (docs\project-cases\*.md) do (
-    echo ### %%~nf >> "%TEMP_FILE%"
     type "%%f" >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
 )
 
 REM 行业应用
-echo ## 🏢 行业应用 Industry Applications >> "%TEMP_FILE%"
-echo. >> "%TEMP_FILE%"
 for %%f in (docs\industry\*.md) do (
-    echo ### %%~nf >> "%TEMP_FILE%"
     type "%%f" >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
 )
 
 REM 引擎生态
-echo ## 🚀 引擎生态 Engine Ecosystem >> "%TEMP_FILE%"
-echo. >> "%TEMP_FILE%"
 for %%f in (docs\ecosystem\*.md) do (
-    echo ### %%~nf >> "%TEMP_FILE%"
+    type "%%f" >> "%TEMP_FILE%"
+    echo. >> "%TEMP_FILE%"
+    echo. >> "%TEMP_FILE%"
+)
+
+REM 网络
+for %%f in (docs\network\*.md) do (
     type "%%f" >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
 )
 
 REM 附录
-echo ## 📚 附录 Appendix >> "%TEMP_FILE%"
-echo. >> "%TEMP_FILE%"
 for %%f in (docs\appendix\*.md) do (
-    echo ### %%~nf >> "%TEMP_FILE%"
     type "%%f" >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
     echo. >> "%TEMP_FILE%"
@@ -165,8 +137,21 @@ pandoc "%TEMP_FILE%" -o output\ufbook.pdf ^
     -V CJKmainfont="Microsoft YaHei" ^
     -V geometry:margin=1in ^
     -V documentclass=report ^
-    --highlight-style=tango ^
-    --number-sections
+    --syntax-highlighting=tango ^
+    --number-sections ^
+    --resource-path=docs ^
+    --resource-path=docs\engine-features ^
+    --resource-path=docs\performance ^
+    --resource-path=docs\rendering ^
+    --resource-path=docs\mobile ^
+    --resource-path=docs\pcg ^
+    --resource-path=docs\animation-physics ^
+    --resource-path=docs\tools ^
+    --resource-path=docs\project-cases ^
+    --resource-path=docs\industry ^
+    --resource-path=docs\ecosystem ^
+    --resource-path=docs\network ^
+    --resource-path=docs\appendix
 
 if errorlevel 1 (
     echo.
