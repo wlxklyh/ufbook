@@ -30,6 +30,12 @@ package-lock.json
 *.bak
 *.swp
 *~
+tmpclaude-*-cwd
+all_files*.txt
+nav_files*.txt
+missing_files.txt
+check_missing.py
+nul
 
 # 操作系统
 .DS_Store

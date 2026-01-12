@@ -151,14 +151,15 @@ nav:
     - engine-features/ue5.6-features.md
     - engine-features/smoke-simulation.md
     - engine-features/smart-digital-cockpit.md
-    - engine-features/ue5-object-pool.md
-    - engine-features/multiplatform-asset-update.md
+    - engine-features/ue5-hmi-roadmap.md
   
   - 性能优化:
     - performance/frame-hitches-hunting.md
     - performance/cross-platform-optimization.md
     - performance/snapdragon-profiler.md
     - performance/locke-kingdom-mobile-pipeline.md
+    - performance/ue5-object-pool.md
+    - performance/multiplatform-asset-update.md
   
   - 渲染技术:
     - rendering/wuthering-waves-raytracing.md
@@ -166,14 +167,13 @@ nav:
     - rendering/pixel-optimization.md
     - rendering/ml-graphics-framework.md
     - rendering/destiny-trigger-lighting.md
-    - rendering/metahuman-production.md
-    - rendering/metahuman-facial-muscles.md
     - rendering/scene-art-ue5.md
   
   - 移动开发:
     - mobile/ue5.6-mobile-updates.md
     - mobile/qualcomm-frame-interpolation.md
     - mobile/mobile-optimization-workshop.md
+    - mobile/qualcomm-ue-collaboration.md
   
   - 程序化生成:
     - pcg/dungeon-generation.md
@@ -193,7 +193,6 @@ nav:
     - tools/rider-teamcity.md
     - tools/ai-prototyping.md
     - tools/ue-quickstart-developers.md
-    - tools/horde-framework.md
   
   - 项目实战:
     - project-cases/marvel-rivals-gas.md
@@ -205,26 +204,22 @@ nav:
     - project-cases/multisensory-ue-creation.md
     - project-cases/digital-media-art.md
     - project-cases/national-ceremony-performance.md
+    - project-cases/metahuman-production.md
+    - project-cases/metahuman-facial-muscles.md
+    - project-cases/rs-heritage.md
   
   - 行业应用:
     - industry/digital-twin-ai.md
     - industry/51world-spatial-intelligence.md
     - industry/aec-project-review.md
     - industry/automotive-summit-keynote.md
-    - industry/ue5-hmi-roadmap.md
     - industry/automotive-visualization.md
     - industry/zeekr-009-design.md
     - industry/adas-scene-reconstruction.md
     - industry/smart-05-cockpit.md
     - industry/3d-hmi-operations.md
     - industry/hmi-experience-design.md
-    - industry/education-summit-keynote.md
-    - industry/qualcomm-ue-collaboration.md
     - industry/ue-3d-industry.md
-    - industry/game-education-history.md
-    - industry/bfa-teaching-innovation.md
-    - industry/ue-asia-education.md
-    - industry/rs-heritage.md
     - industry/automotive-gaussian-ai.md
   
   - 引擎生态:
@@ -232,6 +227,11 @@ nav:
     - ecosystem/incremental-processing.md
     - ecosystem/epic-games-store-2025.md
     - ecosystem/metaverse-cloud-gaming.md
+    - ecosystem/horde-framework.md
+    - ecosystem/education-summit-keynote.md
+    - ecosystem/game-education-history.md
+    - ecosystem/bfa-teaching-innovation.md
+    - ecosystem/ue-asia-education.md
   
   - 附录:
     - appendix/faq.md
