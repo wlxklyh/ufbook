@@ -136,5 +136,5 @@ UFBook - UE程序员 - 关注渲染优化
 
 ---
 
-⬅️ [返回目录](../SUMMARY.md) | [查看FAQ](./faq.md)
+⬅️ [返回首页](../index.md) | [查看FAQ](./faq.md)
 

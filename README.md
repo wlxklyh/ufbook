@@ -108,6 +108,7 @@ mkdocs serve
 详细的使用说明请查看：
 
 - **[使用指南-MkDocs.md](使用指南-MkDocs.md)** - 完整使用文档
+- **[CLOUDBASE_DEPLOY.md](CLOUDBASE_DEPLOY.md)** - CloudBase 部署指南（含广告配置）
 - **[docs/images/README.md](docs/images/README.md)** - 图片使用规范
 
 ### 常用命令
@@ -131,7 +132,8 @@ mkdocs gh-deploy --clean
 - `scripts\serve.bat` - 本地预览
 - `scripts\build-web.bat` - 构建网站
 - `scripts\build-pdf.bat` - 生成PDF
-- `scripts\deploy.bat` - 部署发布
+- `scripts\deploy.bat` - 部署到 GitHub Pages
+- `scripts\deploy-to-cloudbase.bat` - 部署到 CloudBase（支持广告）
 
 ## 🤝 如何贡献
 

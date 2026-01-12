@@ -151,6 +151,6 @@
 
 ---
 
-⬅️ [返回目录](../SUMMARY.md) | [查看FAQ](./faq.md) | [加入交流群](./join-community.md)
+⬅️ [返回首页](../index.md) | [查看FAQ](./faq.md) | [加入交流群](./join-community.md)
 
 

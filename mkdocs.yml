@@ -136,11 +136,11 @@ extra:
   #   provider: mike
 
 # 额外的CSS和JS（可选）
-# extra_css:
-#   - stylesheets/extra.css
+extra_css:
+  - assets/stylesheets/ads.css
 
-# extra_javascript:
-#   - javascripts/extra.js
+extra_javascript:
+  - assets/javascripts/ads.js
 
 # 导航结构
 nav:
