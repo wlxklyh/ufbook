@@ -48,7 +48,7 @@ cls
 echo.
 echo [执行] 启动本地预览...
 echo.
-call scripts\serve.bat
+call scripts\server.bat
 cls
 goto MENU
 

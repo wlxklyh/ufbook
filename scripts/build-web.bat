@@ -1,16 +1,16 @@
 @echo off
 chcp 65001 >nul
 echo ========================================
-echo   UF Book - 构建静态网站
+echo   UF Book - Build Static Website
 echo ========================================
 echo.
 
 REM 检查是否已安装 MkDocs
 mkdocs --version >nul 2>&1
 if errorlevel 1 (
-    echo [错误] 未检测到 MkDocs！
+    echo [ERROR] MkDocs not detected!
     echo.
-    echo 请先运行 scripts\install.bat 安装依赖
+    echo Please run scripts\install.bat first to install dependencies
     pause
     exit /b 1
 )
@@ -18,7 +18,16 @@ if errorlevel 1 (
 REM 切换到项目根目录
 cd /d "%~dp0\.."
 
-echo [构建] 正在构建静态网站...
+REM 检查 mkdocs.yml 是否存在
+if not exist "mkdocs.yml" (
+    echo [ERROR] Config file 'mkdocs.yml' does not exist in current directory.
+    echo Current directory: %CD%
+    echo.
+    pause
+    exit /b 1
+)
+
+echo [BUILD] Building static website...
 echo.
 
 REM 构建网站
@@ -26,22 +35,22 @@ mkdocs build --clean
 
 if errorlevel 1 (
     echo.
-    echo [错误] 构建失败！
+    echo [ERROR] Build failed!
     pause
     exit /b 1
 )
 
 echo.
 echo ========================================
-echo   ✓ 构建成功！
+echo   Build successful!
 echo ========================================
 echo.
-echo 输出目录: site\
+echo Output directory: site\
 echo.
-echo 可以使用以下方式预览：
-echo 1. 用浏览器打开 site\index.html
-echo 2. 使用 Python: python -m http.server --directory site 8080
-echo 3. 部署到服务器或 GitHub Pages
+echo You can preview using:
+echo 1. Open site\index.html in browser
+echo 2. Use Python: python -m http.server --directory site 8080
+echo 3. Deploy to server or GitHub Pages
 echo.
 pause
 
