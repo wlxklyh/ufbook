@@ -182,10 +182,7 @@ nav:
     - animation-physics/panel-cloth.md
     - animation-physics/cloth-animation-workflow.md
     - animation-physics/realtime-cloth-nni.md
-  
-  - 网络:
-    - network/README.md
-  
+
   - 开发工具:
     - tools/debugging-tools.md
     - tools/project-prototyping.md

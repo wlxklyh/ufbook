@@ -14,7 +14,8 @@
       "Bash(xargs:*)",
       "Bash(git rev-list:*)",
       "Bash(done)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
