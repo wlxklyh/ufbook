@@ -1,11 +1,11 @@
 site_name: UF2025 虚幻引擎嘉年华演讲总结
 site_description: Unreal Fest Shanghai 2025 所有演讲内容的文字总结版本
 site_author: UF Book Team
-site_url: https://wlxkly-cloudbase-6fpwf09dd84f56e.tcloudbaseapp.com/
+site_url: https://wlxklyh.github.io/ufbook/
 
 # 代码仓库
 repo_name: ufbook
-repo_url: https://github.com/yourusername/ufbook
+repo_url: https://github.com/wlxklyh/ufbook
 edit_uri: edit/main/docs/
 
 # 版权信息
