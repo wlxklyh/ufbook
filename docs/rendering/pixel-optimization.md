@@ -2,7 +2,7 @@
 
 ---
 
-![UE5 技术交流群](UE5_Contact.png)
+![UE5 技术交流群](pixel-optimization/UE5_Contact.png)
 
 ## 加入 UE5 技术交流群
 
@@ -45,7 +45,7 @@
 
 在实际项目中,我们经常遇到这样的困惑:**为什么720p的电影画面看起来比4K的游戏画面更精致**?
 
-![分辨率对比](screenshots/040_plus0.0s.png)
+![分辨率对比](pixel-optimization/Screenshots/040_plus0.0s.png)
 
 如上图所示,左侧是典型的实时渲染游戏画面,右侧是离线渲染或实拍内容。关键区别在于:
 
@@ -61,7 +61,7 @@
 
 ### 1.2 像素冗余与浪费的现象
 
-![贴图密度对比](screenshots/101_plus0.0s.png)
+![贴图密度对比](pixel-optimization/Screenshots/101_plus0.0s.png)
 
 上图展示了一个典型案例:
 - **左图**: 2K分辨率截图放大后的效果
@@ -84,7 +84,7 @@
 
 **视角分辨率**决定了人眼感知的清晰度,它由三个因素决定:
 
-![视角分辨率原理](screenshots/129_plus0.0s.png)
+![视角分辨率原理](pixel-optimization/Screenshots/129_plus0.0s.png)
 
 ```
 视角分辨率 = f(屏幕分辨率, 视场角)
@@ -131,7 +131,7 @@ UE5的TSR(Temporal Super Resolution)提供了内部渲染分辨率与输出分�
 
 UE5提供了强大的贴图密度检查工具:
 
-![贴图密度检查](screenshots/265_plus0.0s.png)
+![贴图密度检查](pixel-optimization/Screenshots/265_plus0.0s.png)
 
 **ViewMode使用方法**:
 1. 进入编辑器,按 ` 键打开控制台
@@ -152,7 +152,7 @@ UE5提供了强大的贴图密度检查工具:
 
 **RVT配置工作流**:
 
-![RVT配置](screenshots/304_plus0.0s.png)
+![RVT配置](pixel-optimization/Screenshots/304_plus0.0s.png)
 
 **步骤1: 确定最近可视距离**
 - 在场景中找到玩家可能靠近的最小距离
@@ -175,7 +175,7 @@ UE5提供了强大的贴图密度检查工具:
 
 ### 3.3 材质缩放警告系统
 
-![缩放警告](screenshots/351_plus0.0s.png)
+![缩放警告](pixel-optimization/Screenshots/351_plus0.0s.png)
 
 **问题场景**: 美术人员随意缩放模型(尤其是非等比缩放),导致贴图密度失配。
 
@@ -208,7 +208,7 @@ if (ScaleRatio > 2.0 || MaxScale > 2.0 || MinScale < 0.5)
 
 ### 4.1 基于视觉感知的纹理分级
 
-![纹理频率分类](screenshots/366_plus0.0s.png)
+![纹理频率分类](pixel-optimization/Screenshots/366_plus0.0s.png)
 
 **核心观察**: 不同对比度的纹理,对模糊的敏感度差异巨大。
 
@@ -259,7 +259,7 @@ if (ScaleRatio > 2.0 || MaxScale > 2.0 || MinScale < 0.5)
 
 ### 5.1 顶点密度上限评估方法
 
-![顶点密度评估](screenshots/708_plus0.0s.png)
+![顶点密度评估](pixel-optimization/Screenshots/708_plus0.0s.png)
 
 **评估思路**: 参考贴图密度检查方法,反向推算顶点需求
 
@@ -280,7 +280,7 @@ if (ScaleRatio > 2.0 || MaxScale > 2.0 || MinScale < 0.5)
 
 ### 5.2 Nanite压缩优化:Build Settings深度解析
 
-![Nanite优化](screenshots/753_plus0.0s.png)
+![Nanite优化](pixel-optimization/Screenshots/753_plus0.0s.png)
 
 **默认行为问题**: Nanite导入时默认保留所有顶点数据,不做简化处理。
 
@@ -291,7 +291,7 @@ if (ScaleRatio > 2.0 || MaxScale > 2.0 || MinScale < 0.5)
 
 **优化方案**: 启用 **Build Reduce Error** 参数
 
-![Build Reduce Error](screenshots/753_plus0.0s.png)
+![Build Reduce Error](pixel-optimization/Screenshots/753_plus0.0s.png)
 
 **配置说明**:
 - 该参数控制Nanite在构建时的简化阈值
@@ -310,7 +310,7 @@ if (ScaleRatio > 2.0 || MaxScale > 2.0 || MinScale < 0.5)
 
 ### 5.3 非Nanite模型的LOD策略
 
-![LOD优化](screenshots/793_plus0.0s.png)
+![LOD优化](pixel-optimization/Screenshots/793_plus0.0s.png)
 
 对于不使用Nanite的传统模型(如骨骼网格体、特定材质模型):
 
@@ -335,7 +335,7 @@ if (ScaleRatio > 2.0 || MaxScale > 2.0 || MinScale < 0.5)
 
 ### 6.1 深度差异与轮廓可见性分析
 
-![轮廓可见性](screenshots/674_plus0.0s.png)
+![轮廓可见性](pixel-optimization/Screenshots/674_plus0.0s.png)
 
 **核心观察**: 不同深度差的轮廓线,对顶点精度的要求差异巨大
 
@@ -355,7 +355,7 @@ if (ScaleRatio > 2.0 || MaxScale > 2.0 || MinScale < 0.5)
 
 ### 6.2 Nanite像素边长控制(Max Pixel Edge Length)
 
-![Max Pixel Edge Length](screenshots/809_plus0.0s.png)
+![Max Pixel Edge Length](pixel-optimization/Screenshots/809_plus0.0s.png)
 
 **功能说明**: 该参数定义三角形边在屏幕空间中的最大像素长度
 
@@ -398,7 +398,7 @@ r.Nanite.MaxPixelsEdge [数值]
 
 **VRS(Variable Rate Shading)应用**:
 
-![VRS策略](screenshots/119_plus0.0s.png)
+![VRS策略](pixel-optimization/Screenshots/119_plus0.0s.png)
 
 > **中心区域(玩家注视焦点)**
 > - Shading Rate: 1x1(每像素完整计算)

@@ -2,7 +2,7 @@
 
 ---
 
-![UE5 技术交流群](UE5_Contact.png)
+![UE5 技术交流群](qualcomm-frame-interpolation/UE5_Contact.png)
 
 ## 加入 UE5 技术交流群
 
@@ -44,7 +44,7 @@
 
 一个优质的移动游戏体验需要在多个维度达到平衡:画质、帧率、续航、触控响应、沉浸式音效和震感。然而,现实中最大的挑战来自于**设备发热导致的 CPU/GPU 降频**,这直接影响帧率稳定性,是玩家投诉最多的痛点。
 
-![游戏体验要素](screenshots/014_plus0.0s.png)
+![游戏体验要素](qualcomm-frame-interpolation/Screenshots/014_plus0.0s.png)
 
 以国民级手游为例,许多重度玩家每天游戏时长达到 4-6 小时,他们不希望手机发烫,也不想依赖外接充电设备。这对设备的**长时间稳定性能输出**提出了极高要求。
 
@@ -58,7 +58,7 @@
 
 根据行业研究,一款手机游戏的功耗**不能超过 5 瓦**才能保证良好体验。超过这个阈值,设备会出现明显发热、续航下降、帧率不稳定等问题。而过去四五年间,手机的功耗预算几乎没有提升。
 
-![功耗挑战](screenshots/014_plus0.0s.png)
+![功耗挑战](qualcomm-frame-interpolation/Screenshots/014_plus0.0s.png)
 
 **3. 发热引发的性能衰减**
 
@@ -74,7 +74,7 @@
 
 **场景三:突破帧率上限** - 部分游戏原生只支持 60 帧,通过插帧技术可以让用户体验到 90 帧甚至 120 帧的流畅感。
 
-![插帧应用场景](screenshots/014_plus0.0s.png)
+![插帧应用场景](qualcomm-frame-interpolation/Screenshots/014_plus0.0s.png)
 
 ---
 
@@ -84,7 +84,7 @@
 
 目前市场上的插帧技术可以分为三大类:**基于图像的插帧**、**基于 3D 信息的插帧**和**基于 AI 的插帧**。它们在输入信息、画质上限、接入成本和扩展性上存在本质差异。
 
-![主流插帧技术分类](screenshots/081_plus0.0s.png)
+![主流插帧技术分类](qualcomm-frame-interpolation/Screenshots/081_plus0.0s.png)
 
 ### 插帧技术的核心 KPI 指标
 
@@ -95,7 +95,7 @@
 - **延迟** (Latency): 从触控输入到画面显示的端到端延迟
 - **可扩展性** (Scalability): 从支持一个游戏扩展到支持数十个游戏的难度
 
-![KPI 指标](screenshots/081_plus0.0s.png)
+![KPI 指标](qualcomm-frame-interpolation/Screenshots/081_plus0.0s.png)
 
 ### 方案对比:三种技术路线的权衡取舍
 
@@ -117,7 +117,7 @@
 > - 🔴 **劣势**: 高度依赖模型质量,简单模型可能不如 2D 方案,复杂模型功耗和延迟较高
 > - 🎯 **适用场景**: 未来主流方向,适合有 AI 加速硬件的高端设备,需要平衡模型复杂度与性能
 
-![技术路线对比](screenshots/081_plus0.0s.png)
+![技术路线对比](qualcomm-frame-interpolation/Screenshots/081_plus0.0s.png)
 
 ### 延迟的技术细节:为什么不同方案差异巨大?
 
@@ -137,7 +137,7 @@
 
 **技术定位**: GIME (Game Image Motion Engine) 1.0 是高通推出的第一代插帧技术,完全基于 2D 图像信息,运行在 GPU 上。
 
-![GIME 1.0 架构](screenshots/156_plus0.0s.png)
+![GIME 1.0 架构](qualcomm-frame-interpolation/Screenshots/156_plus0.0s.png)
 
 **核心特性**:
 
@@ -158,7 +158,7 @@
 
 **技术升级**: GIME 2.0 是对 1.0 的重大升级,引入了 3D 渲染信息,画质提升明显。
 
-![GIME 2.0 工作流程](screenshots/244_plus0.0s.png)
+![GIME 2.0 工作流程](qualcomm-frame-interpolation/Screenshots/244_plus0.0s.png)
 
 **关键技术改进**:
 
@@ -179,7 +179,7 @@ GIME 2.0 需要从游戏引擎获取以下数据:
 
 通过**主 Surface 插帧**技术,GIME 2.0 可以单独处理游戏主画面,避免 UI 层干扰。
 
-![GIME 2.0 画质优化](screenshots/267_plus0.0s.png)
+![GIME 2.0 画质优化](qualcomm-frame-interpolation/Screenshots/267_plus0.0s.png)
 
 **3. 极低延迟设计**
 
@@ -192,7 +192,7 @@ GIME 2.0 实现了 **0.5 帧的延迟**,换算成毫秒,大多数游戏的触控
 2. 修改渲染管线,导出所需的 Buffer 数据
 3. 实现 Unity 或 Unreal Engine 的插件(Plugin)
 
-![GIME 2.0 集成流程](screenshots/254_plus0.0s.png)
+![GIME 2.0 集成流程](qualcomm-frame-interpolation/Screenshots/254_plus0.0s.png)
 
 虽然有一定开发工作量,但高通提供了 Unreal Engine 的 Reference Code,可大幅降低接入难度。
 
@@ -200,7 +200,7 @@ GIME 2.0 实现了 **0.5 帧的延迟**,换算成毫秒,大多数游戏的触控
 
 在《逆水寒》光追场景中,从原生 60 帧改为 30 帧渲染 + GIME 2.0 插帧至 60 帧,功耗降低 **40.1%**。在其他游戏中,功耗节省普遍在 **20%-45%** 之间。
 
-![GIME 2.0 功耗数据](screenshots/267_plus0.0s.png)
+![GIME 2.0 功耗数据](qualcomm-frame-interpolation/Screenshots/267_plus0.0s.png)
 
 **平台支持**:
 
@@ -214,7 +214,7 @@ GIME 2.0 支持高通骁龙 **800 系列**和部分 **700 系列** SoC,覆盖了
 
 **技术定位**: Game FRC Plus 是高通最新的插帧技术,运行在 **NPU (Neural Processing Unit)** 上,结合了 AI 算法和专用硬件加速。
 
-![Game FRC Plus 架构](screenshots/324_plus0.0s.png)
+![Game FRC Plus 架构](qualcomm-frame-interpolation/Screenshots/324_plus0.0s.png)
 
 **核心优势**:
 
@@ -243,13 +243,13 @@ Game FRC Plus 支持在 NPU 上**同时运行插帧和超分辨率**,例如:
 
 高通在 Snapdragon SoC 的 NPU 中集成了插帧专用硬件单元,大幅降低功耗和延迟。
 
-![Game FRC Plus 特性](screenshots/353_plus0.0s.png)
+![Game FRC Plus 特性](qualcomm-frame-interpolation/Screenshots/353_plus0.0s.png)
 
 **性能表现**:
 
 在一款主流重度游戏中,从 30 帧插帧到 60 帧,相比原生 60 帧,功耗降低约 **30%**。
 
-![Game FRC Plus 功耗数据](screenshots/353_plus0.0s.png)
+![Game FRC Plus 功耗数据](qualcomm-frame-interpolation/Screenshots/353_plus0.0s.png)
 
 **扩展性分析**:
 
@@ -269,7 +269,7 @@ Game FRC Plus 支持在 NPU 上**同时运行插帧和超分辨率**,例如:
 
 ### AI 技术的全面渗透
 
-![未来趋势](screenshots/380_plus0.0s.png)
+![未来趋势](qualcomm-frame-interpolation/Screenshots/380_plus0.0s.png)
 
 AI 正在从多个维度改变插帧技术:
 

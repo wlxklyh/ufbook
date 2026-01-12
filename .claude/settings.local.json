@@ -15,7 +15,9 @@
       "Bash(git rev-list:*)",
       "Bash(done)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(python check_images.py:*)",
+      "Bash(python fix_image_paths.py:*)"
     ]
   }
 }
