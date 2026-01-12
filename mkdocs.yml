@@ -1,7 +1,7 @@
 site_name: UF2025 虚幻引擎嘉年华演讲总结
 site_description: Unreal Fest Shanghai 2025 所有演讲内容的文字总结版本
 site_author: UF Book Team
-site_url: https://yourusername.github.io/ufbook/
+site_url: https://wlxkly-cloudbase-6fpwf09dd84f56e.tcloudbaseapp.com/
 
 # 代码仓库
 repo_name: ufbook
@@ -69,6 +69,9 @@ theme:
     
   # 自定义404页面
   favicon: assets/favicon.png
+  
+  # 自定义主题目录
+  custom_dir: overrides
 
 # Markdown 扩展
 markdown_extensions:
@@ -134,13 +137,58 @@ extra:
   # 版本切换（可选）
   # version:
   #   provider: mike
+  
+  # ==========================================
+  # 广告配置
+  # ==========================================
+  ads_enabled: false  # 设置为 true 启用广告
+  
+  # 腾讯广告（GDT）配置
+  tencent_ads_enabled: false  # 设置为 true 启用腾讯广告
+  tencent_ad_banner_id: "your-banner-ad-id"      # 顶部横幅广告位 ID
+  tencent_ad_sidebar_id: "your-sidebar-ad-id"    # 侧边栏广告位 ID
+  tencent_ad_article_id: "your-article-ad-id"    # 文章底部广告位 ID
+  
+  # 自定义广告代码（可选）
+  custom_ads_enabled: false
+  custom_ad_code: |
+    <!-- 在这里粘贴您的自定义广告代码 -->
+  
+  # ==========================================
+  # 评论系统配置（Giscus）
+  # ==========================================
+  comments_enabled: false  # 设置为 true 启用评论
+  
+  giscus_enabled: false  # 设置为 true 启用 Giscus 评论
+  giscus:
+    repo: "yourusername/ufbook"           # GitHub 仓库（格式：owner/repo）
+    repo_id: "your-repo-id"               # 仓库 ID（在 giscus.app 获取）
+    category: "Announcements"             # Discussion 分类
+    category_id: "your-category-id"       # 分类 ID（在 giscus.app 获取）
+    mapping: "pathname"                   # 页面映射方式
+    strict: "0"                           # 严格匹配
+    reactions_enabled: "1"                # 启用表情反应
+    emit_metadata: "0"                    # 发送元数据
+    input_position: "bottom"              # 评论框位置（top/bottom）
+    theme: "preferred_color_scheme"       # 主题（自动跟随系统）
+    lang: "zh-CN"                         # 语言
+    loading: "lazy"                       # 懒加载
+  
+  # ==========================================
+  # 访问统计配置
+  # ==========================================
+  # 百度统计（推荐国内使用）
+  baidu_analytics: ""  # 填入您的百度统计 ID（如：a1b2c3d4e5f6g7h8）
+  
+  # Google Analytics 4（推荐国际使用）
+  google_analytics: ""  # 填入您的 GA4 测量 ID（如：G-XXXXXXXXXX）
 
-# 额外的CSS和JS（可选）
-# extra_css:
-#   - stylesheets/extra.css
+# 额外的CSS和JS
+extra_css:
+  - assets/stylesheets/ads-custom.css
 
-# extra_javascript:
-#   - javascripts/extra.js
+extra_javascript:
+  - assets/javascripts/analytics.js
 
 # 导航结构
 nav:
