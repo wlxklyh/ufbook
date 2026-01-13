@@ -1,61 +1,61 @@
 @echo off
 chcp 65001 >nul
 echo ========================================
-echo   UF Book - 部署到 GitHub Pages
+echo   UF Book - Deploy to GitHub Pages
 echo ========================================
 echo.
 
-REM 检查是否已安装 MkDocs
+REM Check if MkDocs is installed
 mkdocs --version >nul 2>&1
 if errorlevel 1 (
-    echo [错误] 未检测到 MkDocs！
+    echo [ERROR] MkDocs not detected!
     echo.
-    echo 请先运行 scripts\install.bat 安装依赖
+    echo Please run scripts\install.bat first
     pause
     exit /b 1
 )
 
-REM 检查是否在 Git 仓库中
+REM Check if in Git repository
 cd /d "%~dp0\.."
 git status >nul 2>&1
 if errorlevel 1 (
-    echo [错误] 当前目录不是 Git 仓库！
+    echo [ERROR] Current directory is not a Git repository!
     echo.
-    echo 请确保项目已初始化为 Git 仓库：
+    echo Please ensure the project is initialized as Git repo:
     echo   git init
-    echo   git remote add origin [你的仓库地址]
+    echo   git remote add origin [your-repo-url]
     pause
     exit /b 1
 )
 
-echo [提示] 此操作将会：
-echo   1. 构建静态网站
-echo   2. 部署到 gh-pages 分支
-echo   3. 推送到 GitHub
+echo [INFO] This operation will:
+echo   1. Build the static website
+echo   2. Deploy to gh-pages branch
+echo   3. Push to GitHub
 echo.
-echo 确认部署？
+echo Confirm deployment?
 pause
 
 echo.
-echo [部署] 正在部署到 GitHub Pages...
+echo [DEPLOY] Deploying to GitHub Pages...
 echo.
 
-REM 使用 MkDocs 内置部署命令
+REM Use MkDocs built-in deploy command
 mkdocs gh-deploy --clean
 
 if errorlevel 1 (
     echo.
-    echo [错误] 部署失败！
+    echo [ERROR] Deployment failed!
     echo.
-    echo 可能的原因：
-    echo 1. 没有配置 Git 远程仓库
-    echo 2. 没有推送权限
-    echo 3. 网络连接问题
+    echo Possible reasons:
+    echo 1. No Git remote repository configured
+    echo 2. No push permission
+    echo 3. Network connection issue
     echo.
-    echo 手动部署步骤：
+    echo Manual deployment steps:
     echo 1. mkdocs build
     echo 2. git checkout gh-pages
-    echo 3. 复制 site/* 到根目录
+    echo 3. Copy site/* to root directory
     echo 4. git add . ^&^& git commit -m "Update" ^&^& git push
     pause
     exit /b 1
@@ -63,19 +63,16 @@ if errorlevel 1 (
 
 echo.
 echo ========================================
-echo   ✓ 部署成功！
+echo   SUCCESS! Deployment completed!
 echo ========================================
 echo.
-echo 你的网站将在几分钟内更新
+echo Your website will be updated in a few minutes
 echo.
-echo 访问地址：
-echo https://yourusername.github.io/ufbook/
+echo Visit:
+echo https://wlxklyh.github.io/ufbook/
 echo.
-echo 提示：
-echo - 首次部署可能需要等待 5-10 分钟
-echo - 在 GitHub 仓库设置中启用 Pages（gh-pages 分支）
+echo Tips:
+echo - First deployment may take 5-10 minutes
+echo - Enable Pages in GitHub repository settings (gh-pages branch)
 echo.
 pause
-
-
-
