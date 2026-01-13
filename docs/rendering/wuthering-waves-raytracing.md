@@ -225,6 +225,13 @@ Lumen 使用 **Surface Cache（表面缓存）**机制：
 
 这种混合策略在性能和画质之间取得了最佳平衡。
 
+
+
+### 4.4 补充下漏了的部分(wlxklyh:补充下 不知道为啥漏了这部分)
+
+移植了screenprobe、radiance cache。world space的probe没有说是多大范围的。
+![](wuthering-waves-raytracing/Screenshots/2026-01-14-02-13-01.png)
+![](wuthering-waves-raytracing/Screenshots/2026-01-14-02-13-24.png)
 ---
 
 ## 五、引擎集成：解决实际工程问题
