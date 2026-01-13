@@ -109,7 +109,6 @@
 - **屏幕外物体也能被反射**（这是传统 SSR 无法做到的）
 - 能够正确反射复杂的场景几何
 
-![反射细节](wuthering-waves-raytracing/Screenshots/103_plus0.0s.png)
 
 ### 3.2 光追全局光照（RT Global Illumination）
 
@@ -130,7 +129,7 @@
 
 ![阴影细节展示](wuthering-waves-raytracing/Screenshots/115_plus0.0s.png)
 
-对比效果非常明显：关闭光追时，建筑细节的阴影完全丢失；开启光追后，所有细节都能正确投影。
+对比效果非常明显：关闭光追时，建筑细节的阴影完全丢失；开启光追后，所有细节都能正确投影。（wlxklyh:这里是用了求交来做的光追阴影？跟lumen没关系应该）
 
 ---
 
@@ -220,7 +219,7 @@ Lumen 使用 **Surface Cache（表面缓存）**机制：
 ### 4.3 最终选择：Lumen 混合方案
 
 综合考虑项目需求，团队最终选择了基于 Lumen 的方案：
-- **光追反射**：使用传统光追实现
+- **光追反射**：使用传统光追实现（wlxklyh:确实是跟lumen无关）
 - **光追 GI**：使用 Lumen
 - **光追阴影**：使用传统光追
 
@@ -234,7 +233,7 @@ Lumen 使用 **Surface Cache（表面缓存）**机制：
 
 ### 5.1 灯光数量限制问题
 
-![灯光问题](wuthering-waves-raytracing/Screenshots/272_plus0.0s.png)
+
 
 **问题描述**：
 
@@ -244,11 +243,11 @@ UE4 原版限制参与光追计算的灯光为全局 256 盏。原因是在选�
 
 ![灯光优化](wuthering-waves-raytracing/Screenshots/272_plus0.0s.png)
 
-1. **世界空间分格子**：在世界空间划分网格
+1. **世界空间分格子**：在世界空间划分网格（wlxklyh:UE5 也有light grid）
 2. **Cluster Culling**：使用聚类剔除，将灯光提前过滤
 3. **ReGIR 重要性采样**：参考 ReGIR（Real-time Global Illumination with Radiance Caching and Reservoir Resampling）论文，为每个格子进行适度的重采样
 
-这样每一帧每个格子只有一盏灯光参与计算，大幅降低了开销。
+这样每一帧每个格子只有一盏灯光参与计算，大幅降低了开销。（wlxklyh:重点~！）
 
 **性能对比**：
 
@@ -259,8 +258,6 @@ UE4 原版限制参与光追计算的灯光为全局 256 盏。原因是在选�
 - 开启 ReGIR 后：消耗明显降低
 
 ### 5.2 卡通渲染适配：角色自阴影
-
-![角色自阴影问题](wuthering-waves-raytracing/Screenshots/300_plus0.0s.png)
 
 **问题描述**：
 
@@ -302,6 +299,14 @@ if (IsCharacter(ShadingPoint)) {
 TraceRay(/* ... */, Params.InstanceMask, /* ... */);
 ```
 
+（wlxklyh:如下所示，补充说明 就是dxr的一个功能 求交可以屏蔽一些三角面）
+### 技术细节
+
+- Instance Mask 是硬件光追（DXR/Vulkan RT）的标准功能，可在 `TraceRay` 时传入
+- 每个实例在构建加速结构（TLAS）时可设置一个掩码值
+- 追踪时传入的 Mask 与实例的掩码进行按位与（AND），只有结果非零的实例才会参与相交测试
+
+
 ### 5.3 卡通渲染适配：角色 GI
 
 ![角色 GI](wuthering-waves-raytracing/Screenshots/318_plus0.0s.png)
@@ -310,7 +315,7 @@ TraceRay(/* ... */, Params.InstanceMask, /* ... */);
 
 让角色的渲染与场景氛围更加贴合，角色需要接受场景反射的间接光，提升通透感。
 
-**风格化处理**：
+**风格化处理**：（wlxklyh:这个还挺有意思的）
 
 ![GI 风格化](wuthering-waves-raytracing/Screenshots/324_plus0.0s.png)
 
@@ -387,8 +392,6 @@ float3 ProcessReflectionForToon(float3 BaseColor, float3 Reflection,
 
 ### 5.5 Billboard 和半透物体阴影
 
-![Billboard 阴影问题](wuthering-waves-raytracing/Screenshots/342_plus0.0s.png)
-
 **问题描述**：
 
 场景中有 Billboard 和半透物体需要投射阴影。在光栅化中可以通过静态分支控制 Shadow Pass 和 Base Pass 的物体剔除逻辑，但在光追中不行，因为 BVH 只有一份。
@@ -431,8 +434,6 @@ TraceRay(/* ... */, RayFlags, /* ... */);
 
 ### 5.7 体积雾适配
 
-![体积雾问题](wuthering-waves-raytracing/Screenshots/366_plus0.0s.png)
-
 **问题描述**：
 
 UE4 的体积雾依赖 CSM。当开启光追阴影后，CSM 变得不完整，整个场景的体积雾就会爆掉。
@@ -446,10 +447,10 @@ UE4 的体积雾依赖 CSM。当开启光追阴影后，CSM 变得不完整，�
 2. 在阴影 Lighting 时，用这个 Shadow Volume 去判断体积雾的可见性
 3. 可以通过前面提到的 Hybrid Shadow（混合阴影）做进一步优化，减少追踪的物体
 4. 结合 Shadow Volume 和体积雾的精度需求，在低端机器上使用更低分辨率的 Volume 追踪
+（wlxklyh:3D 体素网格（3D Texture），每个体素记录该位置是否在阴影中  每个体素去做ray 求交）
 
 ### 5.8 单层水体和半透材质
 
-![单层水体](wuthering-waves-raytracing/Screenshots/377_plus0.0s.png)
 
 **问题描述**：
 
@@ -475,7 +476,6 @@ UE4 的体积雾依赖 CSM。当开启光追阴影后，CSM 变得不完整，�
 
 ### 5.9 复杂天空盒反射
 
-![天空盒问题](wuthering-waves-raytracing/Screenshots/399_plus0.0s.png)
 
 **问题描述**：
 
@@ -487,7 +487,7 @@ UE4 的体积雾依赖 CSM。当开启光追阴影后，CSM 变得不完整，�
 
 在 Miss Shader 或者 T 值足够远时，判断为击中天空：
 1. 进行 3 到 4 次的光线遍历
-2. 手动混合（Blend）各层天空
+2. 手动混合（Blend）各层天空  （wlxklyh:这个怎么混合的？？）
 3. 反射出完整的天空效果
 
 **性能问题**：此时性能已经爆炸，引出了后续的性能优化工作。
@@ -559,7 +559,6 @@ struct RayPayload_Original {
 
 ### 6.3 材质简化优化
 
-![材质简化](wuthering-waves-raytracing/Screenshots/441_plus0.0s.png)
 
 **优化思路**：
 
@@ -578,15 +577,13 @@ struct RayPayload_Original {
 
 减少了 Shader 复杂度，降低了寄存器压力和带宽消耗。
 
-### 6.4 NVIDIA 硬件特性
-
-![NVIDIA 特性](wuthering-waves-raytracing/Screenshots/452_plus0.0s.png)
+### 6.4 NVIDIA 硬件特性（wlxklyh:可以借鉴）
 
 团队还使用了两个 NVIDIA 独占的硬件特性：
 
-**OMM（Opacity Micro-Map）**：
-
 ![OMM](wuthering-waves-raytracing/Screenshots/452_plus0.0s.png)
+
+**OMM（Opacity Micro-Map）**：
 
 - 光追中做 Alpha Test 需要在 Any Hit Shader 中计算
 - OMM 可以将三角形的可见性状态烘焙到 BLAS（Bottom-Level Acceleration Structure）中
@@ -595,7 +592,6 @@ struct RayPayload_Original {
 
 **SER（Shader Execution Reordering）**：
 
-![SER](wuthering-waves-raytracing/Screenshots/452_plus0.0s.png)
 
 - 在底层做一次 Shader 的执行重排序
 - 解决 GPU 计算的 Divergence（分歧）问题
