@@ -17,7 +17,9 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(python check_images.py:*)",
-      "Bash(python fix_image_paths.py:*)"
+      "Bash(python fix_image_paths.py:*)",
+      "Bash(git reset:*)",
+      "Bash(git rm:*)"
     ]
   }
 }
