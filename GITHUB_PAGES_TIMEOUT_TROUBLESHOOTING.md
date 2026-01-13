@@ -14,14 +14,58 @@ Canceling Pages deployment...
 
 `actions/deploy-pages@v4` 操作会等待部署完成，但部署状态一直停留在 `deployment_queued`，导致超时。常见原因包括：
 
-1. **GitHub Pages 源配置错误** - 最常见的原因
-2. **权限或环境配置问题**
-3. **GitHub 部署队列拥堵**
-4. **首次部署需要更长时间**
+1. **⚠️ 文件大小超限** - **如果站点大小超过 1GB，这是最可能的原因！**
+   - GitHub Pages 限制：发布的站点大小上限为 **1 GB**
+   - 如果您的站点有 2GB，已超出限制，会导致部署失败或超时
+2. **GitHub Pages 源配置错误**
+3. **权限或环境配置问题**
+4. **GitHub 部署队列拥堵**
+5. **首次部署需要更长时间**
 
 ## ✅ 解决方案
 
-### 方案 1：检查并修复 GitHub Pages 源配置（最重要！）
+### ⚠️ 方案 0：检查文件大小（如果站点约 2GB，这是最可能的原因！）
+
+**GitHub Pages 文件大小限制：**
+- 发布的站点大小上限：**1 GB**
+- 如果站点大小超过 1GB，部署会失败或超时
+
+**检查站点大小：**
+```powershell
+# 检查构建后的 site 目录大小
+cd d:\myws\github\proj\ufbook
+Get-ChildItem -Path site -Recurse -File | Measure-Object -Property Length -Sum | Select-Object @{Name='SizeGB';Expression={[math]::Round($_.Sum/1GB,2)}}
+```
+
+**如果站点超过 1GB，需要优化：**
+
+1. **压缩图片文件**
+   - 使用工具压缩 PNG/JPG 图片：TinyPNG、Squoosh
+   - 单张图片建议 < 500KB
+   - 减少图片尺寸（1920x1080 或更小）
+
+2. **移除不必要的文件**
+   - 删除未使用的图片和资源
+   - 清理重复文件
+
+3. **使用外部存储（推荐）**
+   - 将大型媒体文件存储到外部服务（如腾讯云 COS、GitHub Releases）
+   - 在 Markdown 中引用外部链接
+
+4. **优化构建输出**
+   - 使用图片压缩插件
+   - 启用资源压缩和优化
+
+5. **使用 Git LFS（不推荐用于 GitHub Pages）**
+   - GitHub Pages 不支持 Git LFS
+   - 建议使用外部存储或压缩文件
+
+**推荐方案：使用腾讯云开发部署大文件站点**
+- 腾讯云开发支持更大的文件大小限制
+- 更适合有大量图片的文档站点
+- 参考：[CLOUDBASE_DEPLOYMENT.md](./CLOUDBASE_DEPLOYMENT.md)
+
+### 方案 1：检查并修复 GitHub Pages 源配置
 
 1. **访问仓库设置**
    - 打开：`https://github.com/wlxklyh/ufbook/settings/pages`
@@ -115,22 +159,32 @@ permissions:
 ```
 
 ### Q4: 是否可以增加超时时间？
-**A:** `actions/deploy-pages@v4` 操作没有可配置的超时参数。如果持续超时，通常是配置问题，而不是超时时间问题。
+**A:** `actions/deploy-pages@v4` 操作没有可配置的超时参数。如果持续超时，通常是配置问题或文件大小超限，而不是超时时间问题。
+
+### Q5: 站点有 2GB，如何部署？
+**A:** GitHub Pages 限制为 1GB，2GB 已超出限制。建议：
+1. **优化文件大小**：压缩图片，移除不必要文件
+2. **使用外部存储**：将大文件存储到外部服务
+3. **使用腾讯云开发**：支持更大的文件大小，更适合大文件站点
 
 ## 🚀 推荐操作流程
 
-1. ✅ **首先检查 Pages 源设置**（最重要）
+1. ✅ **首先检查站点文件大小**（如果约 2GB，这是最可能的原因！）
+   - 检查 `site` 目录大小
+   - 如果超过 1GB，需要优化文件大小或使用其他部署方案
+
+2. ✅ **检查 Pages 源设置**
    - 访问仓库设置页面
    - 确保 Source = `GitHub Actions`
 
-2. ✅ **重新触发工作流**
+3. ✅ **重新触发工作流**
    - 手动触发或推送到 main 分支
 
-3. ✅ **等待部署完成**
+4. ✅ **等待部署完成**
    - 首次部署可能需要 10-15 分钟
    - 查看 Actions 标签页的实时日志
 
-4. ✅ **验证部署结果**
+5. ✅ **验证部署结果**
    - 访问：`https://wlxklyh.github.io/ufbook/`
    - 检查网站是否正常显示
 
