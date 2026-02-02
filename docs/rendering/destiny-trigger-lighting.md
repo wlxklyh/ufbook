@@ -63,11 +63,10 @@
 
 ![Screenshots/037_plus0.0s.png](destiny-trigger-lighting/Screenshots/037_plus0.0s.png)
 
-![Screenshots/039_plus0.0s.png](destiny-trigger-lighting/Screenshots/039_plus0.0s.png)
 
 **性能要求**: 作为多人竞技游戏,游戏的流畅性与帧率的稳定性是重中之重。需要采用性能开销尽可能小的技术方案来保证游戏的高帧率运行。
 
-![Screenshots/041_plus0.0s.png](destiny-trigger-lighting/Screenshots/041_plus0.0s.png)
+
 
 ### 1.3 技术选型思路
 
@@ -95,9 +94,7 @@
 
 在项目中,团队存储的是光照的辐射信息,用二阶球谐系数来存储。在运行时只需要简单的线性运算就可以还原GI效果。
 
-![Screenshots/068_plus0.0s.png](destiny-trigger-lighting/Screenshots/068_plus0.0s.png)
 
-![Screenshots/070_plus0.0s.png](destiny-trigger-lighting/Screenshots/070_plus0.0s.png)
 
 ### 2.2 五档画质配置
 
