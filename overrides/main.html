@@ -25,6 +25,10 @@
     gtag('config', '{{ config.extra.google_analytics }}');
   </script>
   {% endif %}
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a5f42e85634247248f18a0798a2e3101"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 {% endblock %}
 
 {% block content %}
