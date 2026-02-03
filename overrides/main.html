@@ -1,5 +1,98 @@
 {% extends "base.html" %}
 
+{# SEO Meta Tags #}
+{% block extrahead %}
+  <!-- SEO 关键词 -->
+  <meta name="keywords" content="虚幻引擎,UE5,Unreal Engine,游戏开发,性能优化,渲染技术,移动开发,UF2025,GDC,技术文档,游戏引擎,Epic Games,蓝图,C++,Nanite,Lumen,MetaHuman">
+  <meta name="author" content="UF Book Team">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="revisit-after" content="7 days">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  {% if page %}
+  <meta property="og:url" content="{{ page.canonical_url }}">
+  <meta property="og:title" content="{{ page.title }} - {{ config.site_name }}">
+  <meta property="og:description" content="{% if page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}">
+  {% else %}
+  <meta property="og:url" content="{{ config.site_url }}">
+  <meta property="og:title" content="{{ config.site_name }}">
+  <meta property="og:description" content="{{ config.site_description }}">
+  {% endif %}
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:locale" content="zh_CN">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  {% if page %}
+  <meta name="twitter:title" content="{{ page.title }} - {{ config.site_name }}">
+  <meta name="twitter:description" content="{% if page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}">
+  {% else %}
+  <meta name="twitter:title" content="{{ config.site_name }}">
+  <meta name="twitter:description" content="{{ config.site_description }}">
+  {% endif %}
+  
+  <!-- 结构化数据 Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ config.site_name }}",
+    "url": "{{ config.site_url }}",
+    "description": "{{ config.site_description }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "UF Book Team"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ config.site_url }}?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  
+  {% if page and page.title != "首页" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "{{ page.title }}",
+    "url": "{{ page.canonical_url }}",
+    "datePublished": "2025-01-04",
+    "dateModified": "{% if page.update_date %}{{ page.update_date }}{% else %}2025-01-04{% endif %}",
+    "author": {
+      "@type": "Organization",
+      "name": "UF Book Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "UF Book Team"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ page.canonical_url }}"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "Unreal Engine 5",
+      "applicationCategory": "Game Engine"
+    }
+  }
+  </script>
+  {% endif %}
+  
+  <!-- 百度站长验证（请替换为您自己的验证码） -->
+  <!-- <meta name="baidu-site-verification" content="your-verification-code"> -->
+  
+  <!-- Google Search Console 验证（请替换为您自己的验证码） -->
+  <!-- <meta name="google-site-verification" content="your-verification-code"> -->
+  
+  <!-- Bing Webmaster 验证 -->
+  <!-- <meta name="msvalidate.01" content="your-verification-code"> -->
+{% endblock %}
+
 {% block analytics %}
   {{ super() }}
   <!-- 百度统计 -->
@@ -42,7 +135,7 @@
   {{ super() }}
 
   <!-- 文章底部评论系统 -->
-  {% if config.extra.comments_enabled and page.meta.comments != False %}
+  {% if config.extra.comments_enabled and page and (not page.meta or page.meta.comments != False) %}
   <div class="md-content__comments">
     {% include "partials/comments.html" %}
   </div>

@@ -1,22 +1,48 @@
-# UF2025(Shanghai) 虚幻引擎嘉年华演讲文字总结
+<div align="center">
 
-> 📚 本项目是对 **Unreal Fest Shanghai 2025（虚幻引擎嘉年华2025上海站）** 所有演讲内容的文字总结版本（AI总结 + 人工review），方便开发者快速查阅和检索技术要点。
+# 🎮 虚幻引擎技术文档库 | UE5 Technical Docs
+
+### Unreal Fest 2025 上海站 · GDC 2025 演讲文字总结
+
+**免费 · 中文 · 全面 · 持续更新**
+
+[![在线阅读](https://img.shields.io/badge/🌐_在线阅读-wlxklyh.site-blue?style=for-the-badge)](https://wlxklyh.site/)
+[![GitHub stars](https://img.shields.io/github/stars/wlxklyh/ufbook?style=for-the-badge&logo=github&label=Star)](https://github.com/wlxklyh/ufbook/stargazers)
 
 [![Made with MkDocs](https://img.shields.io/badge/Made%20with-MkDocs-blue)](https://www.mkdocs.org/)
 [![Material Theme](https://img.shields.io/badge/Theme-Material-pink)](https://squidfunk.github.io/mkdocs-material/)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/wlxklyh/ufbook/pulls)
+
+</div>
+
+---
+
+> 📚 本项目是对 **Unreal Fest 2025（虚幻引擎嘉年华）** 和 **GDC 2025** 演讲内容的文字总结版本（AI总结 + 人工校对），方便 UE5 开发者快速查阅和检索技术要点。
+>
+> **如果对你有帮助，请点个 ⭐ Star 支持一下！**
 
 ## 📖 关于本书
 
 这些内容基于 **B站官方发布的演讲视频** 整理而成，涵盖了虚幻引擎5的最新功能、性能优化、渲染技术、移动开发、项目实战等多个领域的深度技术分享。
 
 **本书特色**：
-- ✅ **完整覆盖** - 包含所有UF2025上海站演讲内容
-- ✅ **AI+人工** - AI总结后经人工review确保准确性
-- ✅ **快速检索** - 支持全文搜索，快速定位技术要点
+- ✅ **完整覆盖** - 52+ 篇技术文章，涵盖 UF2025 上海站全部演讲
+- ✅ **AI+人工** - AI总结后经人工校对确保准确性
+- ✅ **快速检索** - 支持中文全文搜索，快速定位技术要点
 - ✅ **现代化阅读** - 基于 MkDocs Material 主题，深色/浅色模式
-- ✅ **多种格式** - 提供网站版和PDF版
+- ✅ **完全免费** - 开源项目，永久免费
 - ✅ **持续更新** - 内容将持续更新完善
+
+## 🔥 热门内容
+
+| 热门文章 | 关键词 |
+|---------|--------|
+| 🎮 [漫威争锋 GAS 技能架构](https://wlxklyh.site/uf2025-shanghai/project-cases/marvel-rivals-gas/) | GAS、技能系统、网络同步 |
+| 🌊 [鸣潮移动端光线追踪实现](https://wlxklyh.site/uf2025-shanghai/rendering/wuthering-waves-raytracing/) | 光线追踪、移动端、渲染优化 |
+| ⚡ [UE5.7 Preview 新功能](https://wlxklyh.site/uf2025-shanghai/engine-features/ue5.7-preview/) | UE5.7、新特性、引擎更新 |
+| 📊 [跨平台性能优化策略](https://wlxklyh.site/uf2025-shanghai/performance/cross-platform-optimization/) | 性能优化、帧卡顿、Profiling |
+| 🎨 [PCG 程序化地牢生成](https://wlxklyh.site/uf2025-shanghai/pcg/dungeon-generation/) | PCG、程序化生成、关卡设计 |
 
 ## 🚀 快速开始
 
@@ -59,22 +85,20 @@ mkdocs serve
 
 本书按照技术主题分为以下章节：
 
-| 章节 | 说明 | 文章数 |
-|------|------|--------|
-| 📌 **引擎功能** | UE5最新功能与特性 | 4篇 |
-| ⚡ **性能优化** | 跨平台性能优化策略 | 4篇 |
-| 🎮 **渲染技术** | 光线追踪、全局光照等 | 5篇 |
-| 📱 **移动开发** | 移动端开发最新进展 | 2篇 |
-| 🎨 **程序化生成** | PCG系统应用 | 1篇 |
-| 🏃 **动画与物理** | 布料、动画系统 | 2篇 |
-| 🌐 **网络** | 网络架构与优化 | 待更新 |
-| 🛠️ **开发工具** | 调试工具与开发流程 | 4篇 |
-| 🎯 **项目实战** | 商业项目技术分享 | 5篇 |
-| 🏢 **行业应用** | 数字孪生、AEC等 | 3篇 |
-| 🚀 **引擎生态** | 引擎发展方向 | 4篇 |
-| 📚 **附录** | 资源、FAQ等 | 3篇 |
+| 章节 | 说明 | 关键技术点 |
+|------|------|-----------|
+| 📌 **引擎功能** | UE5.6/5.7 新特性 | Nanite、Lumen、MassEntity |
+| ⚡ **性能优化** | 跨平台优化策略 | Profiling、内存优化、对象池 |
+| 🎮 **渲染技术** | 渲染管线与光照 | 光线追踪、GI、后处理 |
+| 📱 **移动开发** | 移动端适配 | 插帧、压缩、发热控制 |
+| 🎨 **程序化生成** | PCG 系统 | 地牢生成、规则系统 |
+| 🏃 **动画与物理** | 角色动画 | 布料模拟、物理动画 |
+| 🛠️ **开发工具** | 开发效率 | Rider、调试工具、CI/CD |
+| 🎯 **项目实战** | 商业案例 | 漫威争锋、鸣潮、CF 彩虹岛 |
+| 🏢 **行业应用** | 非游戏领域 | 数字孪生、汽车HMI、AEC |
+| 🚀 **引擎生态** | 生态发展 | Horde、EGS、元宇宙 |
 
-**总计：40+ 篇专业技术文章**
+**总计：52+ 篇深度技术文章，持续更新中**
 
 ## 🎯 适合人群
 
@@ -180,9 +204,17 @@ mkdocs gh-deploy --clean
 ## 📊 项目统计
 
 - 📖 **章节数量**: 11 个技术章节
-- 📝 **文章数量**: 40+ 篇深度技术文章
-- 🖼️ **图片管理**: 支持按章节分类
+- 📝 **文章数量**: 52+ 篇深度技术文章
+- 🖼️ **配图数量**: 5000+ 张演讲截图
 - 🌐 **多种输出**: HTML网站 + PDF文档
+
+## 🏷️ GitHub Topics
+
+本项目使用以下标签，方便开发者发现：
+
+`unreal-engine` `ue5` `unreal-engine-5` `game-development` `gamedev` `documentation` `chinese` `unreal-fest` `gdc` `game-programming`
+
+> 💡 如果你知道其他 UE5 相关的 awesome 列表，欢迎帮忙提交 PR 添加本项目！
 
 ## 🔗 相关链接
 
@@ -200,14 +232,29 @@ mkdocs gh-deploy --clean
 
 ## ⭐ Star History
 
-如果这个项目对你有帮助，欢迎给个 Star ⭐！
+<div align="center">
+
+**如果这个项目对你有帮助，请点个 Star ⭐ 支持一下！**
+
+[![Star History Chart](https://api.star-history.com/svg?repos=wlxklyh/ufbook&type=Date)](https://star-history.com/#wlxklyh/ufbook&Date)
+
+</div>
 
 ---
 
 <div align="center">
 
+### 🚀 立即开始
+
+[![在线阅读](https://img.shields.io/badge/🌐_在线阅读-wlxklyh.site-blue?style=for-the-badge)](https://wlxklyh.site/)
+[![GitHub stars](https://img.shields.io/github/stars/wlxklyh/ufbook?style=for-the-badge&logo=github&label=Star)](https://github.com/wlxklyh/ufbook/stargazers)
+
 **Built with ❤️ for Unreal Engine Community**
 
-[📖 开始阅读](https://wlxklyh.site/) | [💬 加入交流群](#技术交流) | [🐛 报告问题](https://github.com/wlxklyh/ufbook/issues)
+[📖 开始阅读](https://wlxklyh.site/) | [💬 加入交流群](#-技术交流) | [🐛 报告问题](https://github.com/wlxklyh/ufbook/issues)
+
+---
+
+**关键词 / Keywords**: `虚幻引擎` `UE5` `Unreal Engine 5` `游戏开发` `性能优化` `光线追踪` `Nanite` `Lumen` `GAS` `移动开发` `Unreal Fest` `GDC` `技术文档` `中文教程`
 
 </div>

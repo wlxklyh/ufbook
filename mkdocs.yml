@@ -1,6 +1,6 @@
-site_name: 虚幻引擎技术文档库
-site_description: 虚幻引擎各大技术峰会演讲文字总结，包含 UF2025、GDC 等内容
-site_author: UF Book Team
+site_name: 虚幻引擎技术文档库 - UE5开发者必备资源
+site_description: 免费中文虚幻引擎5(UE5)技术文档，涵盖 Unreal Fest 2025 上海站、GDC 2025 演讲文字总结。内容包括：UE5性能优化、光线追踪渲染、移动端开发、Nanite/Lumen技术、布料动画、PCG程序化生成、漫威争锋GAS架构、鸣潮光追实现等40+篇深度技术文章。AI总结+人工校对，游戏开发者/TA/程序员必备学习资源。
+site_author: wlxklyh
 site_url: https://wlxklyh.site/
 
 # 代码仓库
@@ -124,15 +124,22 @@ plugins:
       separator: '[\s\-\.]+'
   - minify:
       minify_html: true
+  # SEO 优化：社交卡片（分享时自动生成预览图）
+  # - social  # 取消注释启用社交卡片（需要安装 pillow 和 cairosvg）
 
 # 额外配置
 extra:
   # 社交链接
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/yourusername/ufbook
+      link: https://github.com/wlxklyh/ufbook
+      name: GitHub 仓库
     - icon: fontawesome/brands/bilibili
-      link: https://space.bilibili.com/
+      link: https://space.bilibili.com/1449777929
+      name: B站主页
+    - icon: fontawesome/brands/weixin
+      link: "#技术交流"
+      name: 微信交流群
   
   # 版本切换（可选）
   # version:
@@ -161,7 +168,7 @@ extra:
   
   giscus_enabled: false  # 设置为 true 启用 Giscus 评论
   giscus:
-    repo: "yourusername/ufbook"           # GitHub 仓库（格式：owner/repo）
+    repo: "wlxklyh/ufbook"                # GitHub 仓库（格式：owner/repo）
     repo_id: "your-repo-id"               # 仓库 ID（在 giscus.app 获取）
     category: "Announcements"             # Discussion 分类
     category_id: "your-category-id"       # 分类 ID（在 giscus.app 获取）
@@ -175,13 +182,21 @@ extra:
     loading: "lazy"                       # 懒加载
   
   # ==========================================
-  # 访问统计配置
+  # 访问统计配置（重要：推广前请先启用！）
   # ==========================================
-  # 百度统计（推荐国内使用）
-  baidu_analytics: ""  # 填入您的百度统计 ID（如：a1b2c3d4e5f6g7h8）
+  # 
+  # 【百度统计】推荐国内使用
+  # 1. 访问 https://tongji.baidu.com/ 注册账号
+  # 2. 添加网站 wlxklyh.site
+  # 3. 获取统计代码中的 ID（hm.js?后面的字符串）
+  # 4. 填入下方 baidu_analytics
+  baidu_analytics: ""  # 示例：a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
   
-  # Google Analytics 4（推荐国际使用）
-  google_analytics: ""  # 填入您的 GA4 测量 ID（如：G-XXXXXXXXXX）
+  # 【Google Analytics 4】推荐国际使用
+  # 1. 访问 https://analytics.google.com/ 创建媒体资源
+  # 2. 获取测量 ID（G-开头）
+  # 3. 填入下方 google_analytics
+  google_analytics: ""  # 示例：G-XXXXXXXXXX
 
 # 额外的CSS和JS
 extra_css:
@@ -194,92 +209,89 @@ extra_javascript:
 nav:
   - 首页: index.md
   
-  - 引擎功能:
-    - engine-features/ue5.7-preview.md
-    - engine-features/ue5.6-features.md
-    - engine-features/smoke-simulation.md
-    - engine-features/smart-digital-cockpit.md
-    - engine-features/ue5-hmi-roadmap.md
+  - UF2025 Shanghai:
+    - uf2025-shanghai/index.md
+    - 引擎功能:
+      - uf2025-shanghai/engine-features/ue5.7-preview.md
+      - uf2025-shanghai/engine-features/ue5.6-features.md
+      - uf2025-shanghai/engine-features/smoke-simulation.md
+      - uf2025-shanghai/engine-features/smart-digital-cockpit.md
+      - uf2025-shanghai/engine-features/ue5-hmi-roadmap.md
+    - 性能优化:
+      - uf2025-shanghai/performance/frame-hitches-hunting.md
+      - uf2025-shanghai/performance/cross-platform-optimization.md
+      - uf2025-shanghai/performance/snapdragon-profiler.md
+      - uf2025-shanghai/performance/locke-kingdom-mobile-pipeline.md
+      - uf2025-shanghai/performance/ue5-object-pool.md
+      - uf2025-shanghai/performance/multiplatform-asset-update.md
+    - 渲染技术:
+      - uf2025-shanghai/rendering/wuthering-waves-raytracing.md
+      - uf2025-shanghai/rendering/delta-force-gi.md
+      - uf2025-shanghai/rendering/pixel-optimization.md
+      - uf2025-shanghai/rendering/ml-graphics-framework.md
+      - uf2025-shanghai/rendering/destiny-trigger-lighting.md
+      - uf2025-shanghai/rendering/scene-art-ue5.md
+    - 移动开发:
+      - uf2025-shanghai/mobile/ue5.6-mobile-updates.md
+      - uf2025-shanghai/mobile/qualcomm-frame-interpolation.md
+      - uf2025-shanghai/mobile/mobile-optimization-workshop.md
+      - uf2025-shanghai/mobile/qualcomm-ue-collaboration.md
+    - 程序化生成:
+      - uf2025-shanghai/pcg/dungeon-generation.md
+    - 动画与物理:
+      - uf2025-shanghai/animation-physics/panel-cloth.md
+      - uf2025-shanghai/animation-physics/cloth-animation-workflow.md
+      - uf2025-shanghai/animation-physics/realtime-cloth-nni.md
+    - 开发工具:
+      - uf2025-shanghai/tools/debugging-tools.md
+      - uf2025-shanghai/tools/project-prototyping.md
+      - uf2025-shanghai/tools/world-building-tips.md
+      - uf2025-shanghai/tools/rider-teamcity.md
+      - uf2025-shanghai/tools/ai-prototyping.md
+      - uf2025-shanghai/tools/ue-quickstart-developers.md
+    - 项目实战:
+      - uf2025-shanghai/project-cases/marvel-rivals-gas.md
+      - uf2025-shanghai/project-cases/cf-rainbow.md
+      - uf2025-shanghai/project-cases/one-piece-rd.md
+      - uf2025-shanghai/project-cases/5-years-game-breakthrough.md
+      - uf2025-shanghai/project-cases/isekai-art-production.md
+      - uf2025-shanghai/project-cases/mulan2125-vfx.md
+      - uf2025-shanghai/project-cases/multisensory-ue-creation.md
+      - uf2025-shanghai/project-cases/digital-media-art.md
+      - uf2025-shanghai/project-cases/national-ceremony-performance.md
+      - uf2025-shanghai/project-cases/metahuman-production.md
+      - uf2025-shanghai/project-cases/metahuman-facial-muscles.md
+      - uf2025-shanghai/project-cases/rs-heritage.md
+    - 行业应用:
+      - uf2025-shanghai/industry/digital-twin-ai.md
+      - uf2025-shanghai/industry/51world-spatial-intelligence.md
+      - uf2025-shanghai/industry/aec-project-review.md
+      - uf2025-shanghai/industry/automotive-summit-keynote.md
+      - uf2025-shanghai/industry/automotive-visualization.md
+      - uf2025-shanghai/industry/zeekr-009-design.md
+      - uf2025-shanghai/industry/adas-scene-reconstruction.md
+      - uf2025-shanghai/industry/smart-05-cockpit.md
+      - uf2025-shanghai/industry/3d-hmi-operations.md
+      - uf2025-shanghai/industry/hmi-experience-design.md
+      - uf2025-shanghai/industry/ue-3d-industry.md
+      - uf2025-shanghai/industry/automotive-gaussian-ai.md
+    - 引擎生态:
+      - uf2025-shanghai/ecosystem/keynote.md
+      - uf2025-shanghai/ecosystem/incremental-processing.md
+      - uf2025-shanghai/ecosystem/epic-games-store-2025.md
+      - uf2025-shanghai/ecosystem/metaverse-cloud-gaming.md
+      - uf2025-shanghai/ecosystem/horde-framework.md
+      - uf2025-shanghai/ecosystem/education-summit-keynote.md
+      - uf2025-shanghai/ecosystem/game-education-history.md
+      - uf2025-shanghai/ecosystem/bfa-teaching-innovation.md
+      - uf2025-shanghai/ecosystem/ue-asia-education.md
+    - 附录:
+      - uf2025-shanghai/appendix/faq.md
+      - uf2025-shanghai/appendix/resources.md
+      - uf2025-shanghai/appendix/join-community.md
   
-  - 性能优化:
-    - performance/frame-hitches-hunting.md
-    - performance/cross-platform-optimization.md
-    - performance/snapdragon-profiler.md
-    - performance/locke-kingdom-mobile-pipeline.md
-    - performance/ue5-object-pool.md
-    - performance/multiplatform-asset-update.md
+  - GDC2025:
+    - gdc2025/index.md
   
-  - 渲染技术:
-    - rendering/wuthering-waves-raytracing.md
-    - rendering/delta-force-gi.md
-    - rendering/pixel-optimization.md
-    - rendering/ml-graphics-framework.md
-    - rendering/destiny-trigger-lighting.md
-    - rendering/scene-art-ue5.md
-  
-  - 移动开发:
-    - mobile/ue5.6-mobile-updates.md
-    - mobile/qualcomm-frame-interpolation.md
-    - mobile/mobile-optimization-workshop.md
-    - mobile/qualcomm-ue-collaboration.md
-  
-  - 程序化生成:
-    - pcg/dungeon-generation.md
-  
-  - 动画与物理:
-    - animation-physics/panel-cloth.md
-    - animation-physics/cloth-animation-workflow.md
-    - animation-physics/realtime-cloth-nni.md
-
-  - 开发工具:
-    - tools/debugging-tools.md
-    - tools/project-prototyping.md
-    - tools/world-building-tips.md
-    - tools/rider-teamcity.md
-    - tools/ai-prototyping.md
-    - tools/ue-quickstart-developers.md
-  
-  - 项目实战:
-    - project-cases/marvel-rivals-gas.md
-    - project-cases/cf-rainbow.md
-    - project-cases/one-piece-rd.md
-    - project-cases/5-years-game-breakthrough.md
-    - project-cases/isekai-art-production.md
-    - project-cases/mulan2125-vfx.md
-    - project-cases/multisensory-ue-creation.md
-    - project-cases/digital-media-art.md
-    - project-cases/national-ceremony-performance.md
-    - project-cases/metahuman-production.md
-    - project-cases/metahuman-facial-muscles.md
-    - project-cases/rs-heritage.md
-  
-  - 行业应用:
-    - industry/digital-twin-ai.md
-    - industry/51world-spatial-intelligence.md
-    - industry/aec-project-review.md
-    - industry/automotive-summit-keynote.md
-    - industry/automotive-visualization.md
-    - industry/zeekr-009-design.md
-    - industry/adas-scene-reconstruction.md
-    - industry/smart-05-cockpit.md
-    - industry/3d-hmi-operations.md
-    - industry/hmi-experience-design.md
-    - industry/ue-3d-industry.md
-    - industry/automotive-gaussian-ai.md
-  
-  - 引擎生态:
-    - ecosystem/keynote.md
-    - ecosystem/incremental-processing.md
-    - ecosystem/epic-games-store-2025.md
-    - ecosystem/metaverse-cloud-gaming.md
-    - ecosystem/horde-framework.md
-    - ecosystem/education-summit-keynote.md
-    - ecosystem/game-education-history.md
-    - ecosystem/bfa-teaching-innovation.md
-    - ecosystem/ue-asia-education.md
-  
-  - 附录:
-    - appendix/faq.md
-    - appendix/resources.md
-    - appendix/join-community.md
+  - 关于: about.md
 
