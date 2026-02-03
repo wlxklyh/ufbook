@@ -48,7 +48,8 @@ theme:
     - navigation.tabs           # 顶部标签页
     - navigation.tabs.sticky    # 固定标签页
     - navigation.sections       # 导航章节
-    - navigation.expand         # 默认展开导航
+    # - navigation.expand       # 移除：默认不展开，避免导航过长
+    # - navigation.prune        # 移除：会导致分类内文章列表被隐藏
     - navigation.path           # 面包屑导航
     - navigation.indexes        # 章节索引页
     - navigation.top            # 返回顶部按钮

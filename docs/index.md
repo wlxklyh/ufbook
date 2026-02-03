@@ -1,17 +1,89 @@
 # 虚幻引擎技术文档库
 
-> 这里汇集了虚幻引擎各大技术峰会的演讲文字总结，方便开发者快速查阅和检索技术要点。
->
-> **免费 · 中文 · 全面 · 持续更新**
+<div class="hero-banner" markdown>
 
-[![GitHub stars](https://img.shields.io/github/stars/wlxklyh/ufbook?style=social)](https://github.com/wlxklyh/ufbook/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/wlxklyh/ufbook?style=social)](https://github.com/wlxklyh/ufbook/network/members)
+!!! example "UE5 开发者必备资源"
 
-!!! success "如果对你有帮助，请在 [GitHub](https://github.com/wlxklyh/ufbook) 点个 Star :star: 支持一下！"
+    :material-book-open-variant: 汇集虚幻引擎各大技术峰会的演讲文字总结
+    
+    :material-magnify: 支持全文搜索，快速定位技术要点
+    
+    :material-gift-outline: **免费** · **中文** · **全面** · **持续更新**
+
+</div>
+
+<div class="grid cards" markdown>
+
+-   :material-file-document-multiple:{ .lg } **52+**
+    
+    篇深度技术文章
+
+-   :material-folder-star:{ .lg } **11**
+    
+    个技术领域
+
+-   :material-image-multiple:{ .lg } **5000+**
+    
+    张演讲截图
+
+-   :material-account-group:{ .lg } **AI+人工**
+    
+    确保内容准确
+
+</div>
 
 ---
 
-## 选择活动
+## :video_game: 涉及游戏项目
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0;">
+  <a href="uf2025-shanghai/project-cases/marvel-rivals-gas/" style="display: flex; flex-direction: column; align-items: center; padding: 1rem; background: #fff; border: 1px solid rgba(102,126,234,0.2); border-radius: 12px; text-decoration: none;">
+    <div style="width: 100%; height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
+      <img src="assets/images/games/marvel_rivals.png" alt="漫威争锋" style="max-width: 140px; max-height: 70px; object-fit: contain;">
+    </div>
+    <span style="font-size: 0.75rem; color: #667eea; font-weight: 600;">NetEase</span>
+    <span style="font-size: 0.7rem; color: #666;">GAS技能系统 · 网络同步</span>
+  </a>
+  <a href="uf2025-shanghai/rendering/wuthering-waves-raytracing/" style="display: flex; flex-direction: column; align-items: center; padding: 1rem; background: #fff; border: 1px solid rgba(102,126,234,0.2); border-radius: 12px; text-decoration: none;">
+    <div style="width: 100%; height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
+      <img src="assets/images/games/wuthering_waves.png" alt="鸣潮" style="max-width: 140px; max-height: 70px; object-fit: contain;">
+    </div>
+    <span style="font-size: 0.75rem; color: #667eea; font-weight: 600;">库洛游戏</span>
+    <span style="font-size: 0.7rem; color: #666;">移动端光追 · 二次元渲染</span>
+  </a>
+  <a href="uf2025-shanghai/project-cases/cf-rainbow/" style="display: flex; flex-direction: column; align-items: center; padding: 1rem; background: #fff; border: 1px solid rgba(102,126,234,0.2); border-radius: 12px; text-decoration: none;">
+    <div style="width: 100%; height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
+      <img src="assets/images/games/cf_hong.png" alt="穿越火线-虹" style="max-width: 140px; max-height: 70px; object-fit: contain;">
+    </div>
+    <span style="font-size: 0.75rem; color: #667eea; font-weight: 600;">腾讯</span>
+    <span style="font-size: 0.7rem; color: #666;">程序化生态 · 场景生成</span>
+  </a>
+  <a href="uf2025-shanghai/rendering/delta-force-gi/" style="display: flex; flex-direction: column; align-items: center; padding: 1rem; background: #fff; border: 1px solid rgba(102,126,234,0.2); border-radius: 12px; text-decoration: none;">
+    <div style="width: 100%; height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
+      <img src="assets/images/games/delta_force.png" alt="三角洲行动" style="max-width: 140px; max-height: 70px; object-fit: contain;">
+    </div>
+    <span style="font-size: 0.75rem; color: #667eea; font-weight: 600;">腾讯</span>
+    <span style="font-size: 0.7rem; color: #666;">全局光照 · 跨平台GI</span>
+  </a>
+  <a href="uf2025-shanghai/project-cases/one-piece-rd/" style="display: flex; flex-direction: column; align-items: center; padding: 1rem; background: #fff; border: 1px solid rgba(102,126,234,0.2); border-radius: 12px; text-decoration: none;">
+    <div style="width: 100%; height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem; background: #1a1a2e; border-radius: 8px; padding: 8px;">
+      <img src="assets/images/games/one_piece.png" alt="航海王" style="max-width: 140px; max-height: 54px; object-fit: contain;">
+    </div>
+    <span style="font-size: 0.75rem; color: #667eea; font-weight: 600;">Bandai Namco</span>
+    <span style="font-size: 0.7rem; color: #666;">ACT工业化 · 高频迭代</span>
+  </a>
+  <a href="uf2025-shanghai/performance/locke-kingdom-mobile-pipeline/" style="display: flex; flex-direction: column; align-items: center; padding: 1rem; background: #fff; border: 1px solid rgba(102,126,234,0.2); border-radius: 12px; text-decoration: none;">
+    <div style="width: 100%; height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
+      <img src="assets/images/games/luoke_kingdom.png" alt="洛克王国" style="max-width: 140px; max-height: 70px; object-fit: contain;">
+    </div>
+    <span style="font-size: 0.75rem; color: #667eea; font-weight: 600;">腾讯</span>
+    <span style="font-size: 0.7rem; color: #666;">移动端渲染 · 性能优化</span>
+  </a>
+</div>
+
+---
+
+## :material-star-shooting: 精选活动
 
 <div class="grid cards" markdown>
 
@@ -19,107 +91,78 @@
 
     ---
 
-    **Unreal Fest 2025 上海站**
+    <b>Unreal Fest 2025 上海站</b> - 虚幻引擎嘉年华
+    
+    引擎功能 · 性能优化 · 渲染技术 · 移动开发 · 项目实战
 
-    虚幻引擎嘉年华演讲文字总结，包含引擎功能、性能优化、渲染技术、移动开发等多个领域的深度技术分享。
-
-    - **52+ 篇** 技术文章
-    - **11 个** 技术领域
-    - **AI+人工** 整理
-
-    [:octicons-arrow-right-24: 进入 UF2025 Shanghai](uf2025-shanghai/index.md)
+    [:octicons-arrow-right-24: 立即查看](uf2025-shanghai/index.md){ .md-button .md-button--primary }
 
 -   :material-gamepad-variant:{ .lg .middle } **GDC2025**
 
     ---
 
-    **Game Developers Conference 2025**
+    <b>Game Developers Conference 2025</b>
+    
+    全球最大的游戏开发者会议技术分享
 
-    全球最大的游戏开发者会议技术分享。
-
-    群友达到 **500 人** 会考虑添加。
-
-    [:octicons-clock-24: 敬请期待](gdc2025/index.md)
-
--   :material-calendar-plus:{ .lg .middle } **更多活动**
-
-    ---
-
-    **即将推出...**
-
-    我们会持续收录更多虚幻引擎相关技术峰会的内容。
-
-    敬请关注！
+    [:octicons-clock-24: 即将推出](gdc2025/index.md){ .md-button }
 
 </div>
 
 ---
 
-## 热门文章推荐
+## :fire: 热门推荐
 
-| 文章 | 关键词 | 推荐理由 |
-|-----|--------|---------|
-| :fire: [漫威争锋 GAS 技能架构](uf2025-shanghai/project-cases/marvel-rivals-gas.md) | GAS、技能系统、网络同步 | NetEase 一线实战经验 |
-| :ocean: [鸣潮移动端光追实现](uf2025-shanghai/rendering/wuthering-waves-raytracing.md) | 光线追踪、移动端、二次元 | UE4 上实现光追的完整方案 |
-| :zap: [UE5.7 Preview 新功能](uf2025-shanghai/engine-features/ue5.7-preview.md) | UE5.7、新特性、引擎更新 | 官方最新引擎特性 |
-| :chart_with_upwards_trend: [跨平台性能优化](uf2025-shanghai/performance/cross-platform-optimization.md) | 性能优化、Profiling | 系统性优化方法论 |
-| :jigsaw: [PCG 程序化地牢生成](uf2025-shanghai/pcg/dungeon-generation.md) | PCG、程序化生成 | 程序化内容生成实践 |
+| 热度 | 文章 | 标签 | 
+|:---:|------|------|
+| :star::star::star: | [:octicons-arrow-right-24: 漫威争锋 GAS 技能架构](uf2025-shanghai/project-cases/marvel-rivals-gas.md) | `GAS` `技能系统` `网络同步` |
+| :star::star::star: | [:octicons-arrow-right-24: 鸣潮移动端光追实现](uf2025-shanghai/rendering/wuthering-waves-raytracing.md) | `光线追踪` `移动端` `二次元` |
+| :star::star: | [:octicons-arrow-right-24: UE5.7 Preview 新功能](uf2025-shanghai/engine-features/ue5.7-preview.md) | `UE5.7` `新特性` |
+| :star::star: | [:octicons-arrow-right-24: 跨平台性能优化](uf2025-shanghai/performance/cross-platform-optimization.md) | `性能优化` `Profiling` |
+| :star: | [:octicons-arrow-right-24: PCG 程序化地牢生成](uf2025-shanghai/pcg/dungeon-generation.md) | `PCG` `程序化生成` |
 
 ---
 
-## 关于本站
+## :material-heart: 支持项目
 
-本站致力于将虚幻引擎各大技术峰会的演讲内容整理成文字版本，方便开发者：
+!!! success ""
 
-- **快速查阅** - 无需观看完整视频，直接获取核心技术要点
-- **全文检索** - 支持中文搜索，快速定位需要的内容
-- **完全免费** - 开源项目，永久免费
-- **持续更新** - 会议内容持续收录，保持技术前沿
+    :star: 如果对你有帮助，请在 **[GitHub](https://github.com/wlxklyh/ufbook)** 点个 Star 支持一下！
+    
+    [![GitHub stars](https://img.shields.io/github/stars/wlxklyh/ufbook?style=social)](https://github.com/wlxklyh/ufbook/stargazers)
+    [![GitHub forks](https://img.shields.io/github/forks/wlxklyh/ufbook?style=social)](https://github.com/wlxklyh/ufbook/network/members)
 
-## 技术交流
+---
+
+## :fontawesome-brands-weixin: 加入技术社区
 
 <div class="grid cards" markdown>
 
--   :fontawesome-brands-weixin:{ .lg .middle } **加入 UE5 技术交流群**
+-   :material-qrcode:{ .lg .middle } **扫码入群**
 
     ---
 
-    ![UE5 技术交流群](images/UE5_Contact.png){ width="200" }
+    ![UE5 技术交流群](images/UE5_Contact.png){ width="180" }
 
-    **扫码添加微信：wlxklyh**
-    
-    备注「UE5技术交流」拉你进群
+    添加微信 **wlxklyh**，备注「UE5技术交流」
+
+-   :material-account-multiple:{ .lg .middle } **社区福利**
 
     ---
 
-    群内福利：
-
-    - :material-chat-question: 技术问题解答
-    - :material-folder-open: 项目经验分享
+    - :material-chat-question: 技术问题实时解答
+    - :material-folder-open: 一线项目经验分享
     - :material-book-open-variant: 独家学习资源
-    - :material-account-group: 行业信息交流
-
-    **目标：打造 500 人的高质量 UE5 技术社区！**
+    - :material-briefcase: 行业动态与招聘
+    
+    **目标：500人高质量UE5技术社区！**
 
 </div>
 
-!!! tip "为什么要加入？"
-
-    - 遇到技术问题可以直接在群里问，有经验的开发者会帮你解答
-    - 第一时间获取本站更新通知和新内容
-    - 认识更多 UE5 开发者，拓展人脉
-    - 了解行业动态和招聘信息
-
 ---
 
-## 更新记录
+<div style="text-align: center; color: var(--md-default-fg-color--light);">
 
-- 2025-02-04：重构目录结构，支持多活动内容
-- 2025-01-04：项目初始化，创建基础框架
-- 持续更新中...
+本站内容基于各技术峰会官方公开演讲视频整理，仅供学习交流使用。
 
----
-
-## 版权声明
-
-本站内容基于各技术峰会官方公开演讲视频整理，仅供学习交流使用。如有侵权，请联系删除。
+</div>

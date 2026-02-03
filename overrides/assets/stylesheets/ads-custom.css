@@ -1,3 +1,359 @@
+/* ==========================================
+   自定义样式
+   ========================================== */
+
+/* Hero 区域样式 */
+.md-content h1:first-of-type {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+/* Hero Section - Tip 样式 */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: #667eea;
+  background: linear-gradient(135deg, rgba(102,126,234,0.08) 0%, rgba(118,75,162,0.08) 100%);
+}
+
+.md-typeset .admonition.tip > .admonition-title,
+.md-typeset details.tip > summary {
+  background-color: rgba(102,126,234,0.15);
+  border-color: #667eea;
+}
+
+.md-typeset .admonition.tip > .admonition-title::before,
+.md-typeset details.tip > summary::before {
+  background-color: #667eea;
+}
+
+/* Hero Banner - Example 样式 */
+.md-typeset .admonition.example,
+.md-typeset details.example {
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  box-shadow: 0 10px 40px rgba(102,126,234,0.3);
+}
+
+.md-typeset .admonition.example > .admonition-title,
+.md-typeset details.example > summary {
+  background: transparent;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: none;
+  padding-left: 0;
+}
+
+.md-typeset .admonition.example > .admonition-title::before,
+.md-typeset details.example > summary::before {
+  display: none;
+}
+
+.md-typeset .admonition.example p {
+  color: rgba(255,255,255,0.95);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.md-typeset .admonition.example .twemoji,
+.md-typeset .admonition.example svg {
+  color: white;
+  vertical-align: middle;
+}
+
+/* 主按钮样式 */
+.md-typeset .md-button--primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102,126,234,0.3);
+}
+
+.md-typeset .md-button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102,126,234,0.4);
+}
+
+/* 次要按钮样式 */
+.md-typeset .md-button:not(.md-button--primary) {
+  border: 2px solid #667eea;
+  color: #667eea;
+  font-weight: 500;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.md-typeset .md-button:not(.md-button--primary):hover {
+  background: rgba(102,126,234,0.1);
+}
+
+/* 统计数据卡片样式 */
+.md-typeset .grid.cards > ul > li > p:first-child strong,
+.md-typeset .grid.cards > ol > li > p:first-child strong {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  line-height: 1.2;
+}
+
+/* 热门推荐表格样式 */
+.md-typeset table:not([class]) {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.md-typeset table:not([class]) thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.md-typeset table:not([class]) thead th {
+  color: white;
+  font-weight: 600;
+  border: none;
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background: rgba(102,126,234,0.05);
+}
+
+/* 代码标签样式 */
+.md-typeset code {
+  background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+  color: #667eea;
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+}
+
+/* 游戏项目网格展示 */
+.md-typeset .game-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1rem !important;
+  margin: 1.5rem 0 !important;
+  padding: 0 !important;
+}
+
+.md-typeset .game-grid .game-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  padding: 1rem !important;
+  background: var(--md-default-bg-color) !important;
+  border: 1px solid rgba(102,126,234,0.2) !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  min-height: 140px !important;
+}
+
+.md-typeset .game-grid .game-item:hover {
+  border-color: #667eea !important;
+  box-shadow: 0 8px 24px rgba(102,126,234,0.15) !important;
+  transform: translateY(-4px) !important;
+}
+
+.md-typeset .game-grid .game-logo {
+  width: 100% !important;
+  height: 70px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 0.8rem !important;
+  overflow: hidden !important;
+}
+
+.md-typeset .game-grid .game-logo img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 140px !important;
+  max-height: 70px !important;
+  object-fit: contain !important;
+}
+
+.md-typeset .game-grid .game-meta {
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.md-typeset .game-grid .game-company {
+  display: block !important;
+  font-size: 0.75rem !important;
+  color: #667eea !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.md-typeset .game-grid .game-tags {
+  display: block !important;
+  font-size: 0.7rem !important;
+  color: var(--md-default-fg-color--light) !important;
+  line-height: 1.4 !important;
+}
+
+/* 平板适配 */
+@media screen and (max-width: 900px) {
+  .md-typeset .game-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 600px) {
+  .md-typeset .game-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.8rem !important;
+  }
+  
+  .md-typeset .game-grid .game-item {
+    padding: 0.8rem !important;
+    min-height: 120px !important;
+  }
+  
+  .md-typeset .game-grid .game-logo {
+    height: 50px !important;
+  }
+  
+  .md-typeset .game-grid .game-logo img {
+    max-width: 100px !important;
+    max-height: 50px !important;
+  }
+}
+
+/* 引用块美化 - 副标题 */
+.md-content > blockquote:first-of-type {
+  border-left: 4px solid #667eea;
+  background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+  padding: 1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.md-content > blockquote:first-of-type p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Grid Cards 美化 */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > ol > li {
+  border: 1px solid rgba(102,126,234,0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: var(--md-default-bg-color);
+}
+
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid.cards > ol > li:hover {
+  border-color: #667eea;
+  box-shadow: 0 8px 30px rgba(102,126,234,0.15);
+  transform: translateY(-4px);
+}
+
+/* 卡片标题样式 */
+.md-typeset .grid.cards > ul > li > p:first-child,
+.md-typeset .grid.cards > ol > li > p:first-child {
+  font-weight: 600;
+  color: #667eea;
+}
+
+/* 卡片图标美化 */
+.md-typeset .grid.cards .twemoji,
+.md-typeset .grid.cards .emojione,
+.md-typeset .grid.cards svg {
+  color: #667eea;
+}
+
+/* 链接按钮样式 */
+.md-typeset .grid.cards a[href] {
+  color: #667eea;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.md-typeset .grid.cards a[href]:hover {
+  color: #764ba2;
+}
+
+/* 分隔线美化 */
+.md-typeset hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(102,126,234,0.3), transparent);
+  margin: 2.5rem 0;
+}
+
+/* 内容分类标题 */
+.md-typeset h2 {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.md-typeset h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+/* 左侧导航美化 */
+.md-nav__item--nested > .md-nav__link {
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+
+.md-nav__item .md-nav__link {
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.md-nav__item .md-nav__link:hover {
+  background: rgba(102,126,234,0.1);
+  color: #667eea;
+}
+
+.md-nav__item--active > .md-nav__link {
+  color: #667eea;
+  font-weight: 500;
+}
+
+/* 导航分类图标 */
+.md-nav--primary .md-nav__item--nested > .md-nav__link::before {
+  color: #667eea;
+}
+
+/* 导航分类样式 - 让分类更醒目 */
+.md-nav--primary .md-nav__item--nested > .md-nav__link {
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+
+/* 当前活动的分类高亮 */
+.md-nav--primary .md-nav__item--active > .md-nav__link {
+  color: #667eea;
+}
+
 /* 广告样式自定义 */
 
 /* 广告容器基础样式 */

@@ -1,241 +1,160 @@
 # 关于本站
 
-## 📖 网站简介
+<div class="hero-section" markdown>
 
-**UF2025 虚幻引擎嘉年华演讲总结**是一个专注于整理和分享 Unreal Fest Shanghai 2025 演讲内容的技术文档网站。
+!!! info "虚幻引擎技术文档库"
 
-我们的目标是将大会上的精彩演讲内容以文字形式呈现，方便开发者、设计师和技术爱好者学习和参考。
+    专注于整理和分享 Unreal Fest 演讲内容的技术文档网站，让更多开发者受益于前沿技术分享。
 
----
-
-## 🎯 网站使命
-
-- **知识传播**：让更多人能够接触到前沿的虚幻引擎技术
-- **内容整理**：将演讲视频转化为易于阅读和检索的文档
-- **社区贡献**：为虚幻引擎中文社区提供高质量的学习资源
-- **技术分享**：促进开发者之间的技术交流与学习
+</div>
 
 ---
 
-## 📚 内容来源
+## :material-target: 我们的使命
 
-本站所有内容均来源于：
+<div class="grid cards" markdown>
 
-- **Unreal Fest Shanghai 2025**：2025年上海虚幻引擎嘉年华
-- **官方演讲视频**：各位讲师的公开分享
-- **官方文档资料**：Epic Games 及合作伙伴提供的技术文档
-- **社区整理**：由热心社区成员协助整理和编辑
+-   :material-broadcast:{ .lg .middle } **知识传播**
 
----
+    ---
 
-## 🎨 内容分类
+    让更多人能够接触到前沿的虚幻引擎技术
 
-我们的内容涵盖以下主题：
+-   :material-file-document-edit:{ .lg .middle } **内容整理**
 
-### 🔧 引擎功能
-- UE 5.7 预览版新特性
-- UE 5.6 功能更新
-- 烟雾模拟技术
-- 智能数字座舱
-- HMI 技术路线图
+    ---
 
-### ⚡ 性能优化
-- 跨平台性能优化
-- 移动端优化实战
-- 帧率卡顿分析
-- 对象池技术
-- 多平台资源更新
+    将演讲视频转化为易于阅读和检索的文档
 
-### 🎨 渲染技术
-- 鸣潮光线追踪实现
-- 三角洲行动全局光照
-- 像素级优化
-- 机器学习图形框架
-- 场景美术制作
+-   :material-account-group:{ .lg .middle } **社区贡献**
 
-### 📱 移动开发
-- UE 5.6 移动端更新
-- 高通帧插值技术
-- 移动端优化工作坊
-- 高通与虚幻引擎合作
+    ---
 
-### 🎮 项目实战
-- 漫威对决 GAS 系统
-- 穿越火线彩虹行动
-- 航海王梦之指针
-- 异世界美术制作
-- 数字虚拟人制作
+    为虚幻引擎中文社区提供高质量的学习资源
 
-### 🏭 行业应用
-- 数字孪生与 AI
-- 汽车可视化
-- 智能座舱设计
-- 建筑工程评审
-- 空间智能
+-   :material-share-variant:{ .lg .middle } **技术分享**
 
-### 🌐 引擎生态
-- Epic 主题演讲
-- 增量式处理
-- Epic 商城 2025
-- 教育生态发展
-- Horde 框架
+    ---
+
+    促进开发者之间的技术交流与学习
+
+</div>
 
 ---
 
-## 👥 团队介绍
+## :material-chart-box: 网站数据
 
-本站由一群热爱虚幻引擎的技术爱好者共同维护。我们来自不同的背景：
+<div class="grid cards" markdown>
 
-- 游戏开发者
-- 技术美术
-- 工业应用开发者
-- 教育工作者
-- 学生和自学者
+-   :material-file-document-multiple:{ .lg .middle } **52+**
 
-我们相信开源和知识共享的力量，希望通过这个网站为社区做出贡献。
+    ---
 
----
+    篇技术文章
 
-## 🛠️ 技术栈
+-   :material-folder-multiple:{ .lg .middle } **11**
 
-本网站使用以下技术构建：
+    ---
 
-- **静态网站生成器**：[MkDocs](https://www.mkdocs.org/) + [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
-- **托管平台**：[腾讯云 CloudBase](https://cloud.tencent.com/product/tcb)
-- **版本控制**：[GitHub](https://github.com/)
-- **部署工具**：CloudBase CLI
-- **分析工具**：Google Analytics、百度统计
+    个技术领域
 
----
+-   :material-image-multiple:{ .lg .middle } **5000+**
 
-## 📝 内容政策
+    ---
 
-### 版权声明
+    张演讲截图
 
-- 本站内容基于公开演讲整理，仅供学习和研究使用
-- 所有演讲内容的版权归原作者和 Epic Games 所有
-- 图片和截图版权归原演讲者和相关公司所有
-- 如有侵权，请联系我们删除
+-   :material-update:{ .lg .middle } **持续**
 
-### 免责声明
+    ---
 
-- 本站内容可能存在理解偏差或整理错误
-- 技术内容仅供参考，实际应用请以官方文档为准
-- 我们不对因使用本站内容造成的任何损失负责
+    更新中
+
+</div>
 
 ---
 
-## 🤝 如何贡献
+## :material-book-open-variant: 内容来源
 
-我们欢迎社区贡献！您可以通过以下方式参与：
+!!! note "官方演讲整理"
 
-### 1. 内容贡献
-- 补充遗漏的演讲内容
-- 修正文档中的错误
-- 改进文档的排版和可读性
-- 添加更多技术细节和示例
-
-### 2. 技术改进
-- 优化网站性能
-- 改进用户体验
-- 添加新功能
-- 修复 Bug
-
-### 3. 反馈建议
-- 报告内容错误
-- 提出改进建议
-- 分享使用体验
-
-**参与方式：**
-- GitHub Issues：报告问题和建议
-- Pull Request：直接贡献代码和内容
-- 邮件联系：发送反馈和建议
+    - **Unreal Fest Shanghai 2025** - 上海虚幻引擎嘉年华
+    - **GDC 2025** - 游戏开发者大会
+    - **官方演讲视频** - 各位讲师的公开分享
+    - **AI + 人工** - AI 总结后经人工 review 确保准确性
 
 ---
 
-## 📞 联系我们
+## :material-cog: 技术栈
 
-如有任何问题、建议或合作意向，欢迎通过以下方式联系我们：
-
-- **GitHub 仓库**：https://github.com/yourusername/ufbook
-- **问题反馈**：[GitHub Issues](https://github.com/yourusername/ufbook/issues)
-- **电子邮件**：[请在此填写您的联系邮箱]
-- **网站地址**：https://wlxkly-cloudbase-6fpwf09dd84f56e.tcloudbaseapp.com/
-
----
-
-## 🌟 致谢
-
-特别感谢：
-
-- **Epic Games**：举办 Unreal Fest 并支持中国开发者社区
-- **所有讲师**：分享宝贵的技术经验和知识
-- **社区贡献者**：帮助整理和完善文档内容
-- **腾讯云 CloudBase**：提供稳定的托管服务
-- **所有访问者**：您的支持是我们最大的动力
+| 技术 | 说明 |
+|------|------|
+| :material-language-markdown: MkDocs | 静态网站生成器 |
+| :material-palette: Material for MkDocs | 主题框架 |
+| :material-github: GitHub | 版本控制与协作 |
+| :material-cloud: 腾讯云 CloudBase | 托管平台 |
 
 ---
 
-## 📊 网站统计
+## :material-handshake: 如何贡献
 
-- **文档总数**：70+ 篇技术文档
-- **涵盖主题**：9 大技术领域
-- **图片资源**：5000+ 张演讲截图
-- **更新频率**：持续更新中
+<div class="grid cards" markdown>
+
+-   :material-pencil:{ .lg .middle } **内容贡献**
+
+    ---
+
+    补充演讲内容、修正错误、改进排版
+
+    [:octicons-arrow-right-24: GitHub Issues](https://github.com/wlxklyh/ufbook/issues)
+
+-   :material-code-tags:{ .lg .middle } **技术改进**
+
+    ---
+
+    优化性能、改进体验、添加功能
+
+    [:octicons-arrow-right-24: Pull Request](https://github.com/wlxklyh/ufbook/pulls)
+
+</div>
 
 ---
 
-## 🔄 更新日志
+## :material-heart: 致谢
 
-### 2026年1月
-- ✅ 完成所有 UF2025 演讲内容整理
-- ✅ 优化网站性能和用户体验
-- ✅ 添加广告系统支持
-- ✅ 完善隐私政策和用户条款
+!!! success "特别感谢"
 
-### 2025年12月
-- ✅ 网站上线
-- ✅ 部署到腾讯云 CloudBase
-- ✅ 完成基础文档整理
+    - **Epic Games** - 举办 Unreal Fest 并支持中国开发者社区
+    - **所有讲师** - 分享宝贵的技术经验和知识
+    - **社区贡献者** - 帮助整理和完善文档内容
+    - **所有访问者** - 您的支持是我们最大的动力
 
 ---
 
-## 📜 许可证
+## :material-scale-balance: 版权声明
+
+!!! warning "免责声明"
+
+    - 本站内容基于公开演讲整理，仅供学习和研究使用
+    - 所有演讲内容的版权归原作者和 Epic Games 所有
+    - 如有侵权，请联系我们删除
 
 本网站的文档内容采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议。
 
-您可以自由地：
-- **分享**：复制和重新分发
-- **演绎**：修改和创作衍生作品
+---
 
-但需要遵守以下条件：
-- **署名**：必须给出适当的署名
-- **非商业性使用**：不得用于商业目的
-- **相同方式共享**：如果修改，必须采用相同的许可协议
+## :material-email: 联系我们
+
+- :material-github: **GitHub 仓库**：[wlxklyh/ufbook](https://github.com/wlxklyh/ufbook)
+- :fontawesome-brands-bilibili: **B站主页**：[wlxklyh](https://space.bilibili.com/1449777929)
+- :material-web: **网站地址**：[wlxklyh.site](https://wlxklyh.site/)
 
 ---
 
-## 🚀 未来计划
+<div style="text-align: center; color: var(--md-default-fg-color--light); margin-top: 2rem;">
 
-我们计划在未来添加以下功能：
+<b>感谢您访问虚幻引擎技术文档库！</b>
 
-- [ ] 多语言支持（英文版）
-- [ ] 交互式代码示例
-- [ ] 视频教程嵌入
-- [ ] 用户评论系统
-- [ ] 内容搜索优化
-- [ ] 移动端 App
-- [ ] 离线文档下载
-- [ ] 技术问答社区
+让我们一起学习，一起进步！
 
----
-
-**感谢您访问 UF2025 虚幻引擎嘉年华演讲总结！**
-
-让我们一起学习，一起进步！🚀
-
----
-
-*本页面最后更新：2026年1月13日*
-
-
+</div>
