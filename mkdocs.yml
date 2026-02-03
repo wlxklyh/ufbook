@@ -117,6 +117,9 @@ markdown_extensions:
   - pymdownx.tilde
 
 # 插件
+hooks:
+  - hooks.py
+
 plugins:
   - search:
       lang: 
