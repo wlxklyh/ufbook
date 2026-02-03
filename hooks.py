@@ -11,6 +11,7 @@ def on_post_build(config, **kwargs):
     verification_files = [
         'googleb4f1041edf9a23ea.html',
         'BingSiteAuth.xml',
+        'baidu_verify_codeva-RtklraWpcx.html',
     ]
     
     for filename in verification_files:
